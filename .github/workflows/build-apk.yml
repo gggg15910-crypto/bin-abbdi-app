@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071b33">
+<title>بن عبادي للمواد الكهربائية</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f1f5f9;
+ color:#172033
+}
+header{
+ background:linear-gradient(135deg,#071b33,#075985);
+ color:white;
+ text-align:center;
+ padding:25px 15px
+}
+.logo{font-size:48px}
+header h1{margin:8px 0;font-size:26px}
+header p{margin:8px 0}
+nav{
+ display:flex;justify-content:center;gap:10px;
+ padding:12px;background:#fff;flex-wrap:wrap
+}
+nav a{
+ text-decoration:none;color:#075985;
+ font-weight:bold;padding:8px
+}
+.container{max-width:1000px;margin:auto;padding:15px}
+.search{
+ width:100%;padding:13px;border:1px solid #cbd5e1;
+ border-radius:10px;font-size:16px;margin-bottom:15px
+}
+.title{color:#075985;margin-top:25px}
+.products{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:12px
+}
+.card{
+ background:white;border-radius:14px;padding:14px;
+ box-shadow:0 3px 12px #0000000c;text-align:center
+}
+.product-icon{font-size:42px}
+.card h3{font-size:16px;margin:10px 0}
+.price{color:#047857;font-weight:bold;margin:10px 0}
+button{
+ border:0;border-radius:8px;padding:11px;
+ cursor:pointer;font-size:14px;font-weight:bold
+}
+.add{background:#075985;color:white;width:100%}
+.panel{
+ background:white;border-radius:12px;padding:16px;margin-top:20px
+}
+.field{
+ width:100%;padding:12px;margin:7px 0;
+ border:1px solid #cbd5e1;border-radius:8px;font-size:15px
+}
+.primary{background:#047857;color:white;width:100%;margin-top:8px}
+.whatsapp{
+ display:block;text-align:center;background:#16a34a;
+ color:white;text-decoration:none;padding:14px;
+ border-radius:10px;font-weight:bold;margin-top:12px
+}
+footer{
+ background:#071b33;color:white;text-align:center;
+ padding:22px;margin-top:30px
+}
+.small{font-size:13px;color:#64748b;line-height:1.8}
+@media(min-width:650px){
+ .products{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+ <div class="logo">💡</div>
+ <h1>بن عبادي للمواد الكهربائية</h1>
+ <p>كل ما تحتاجه من مستلزمات الكهرباء في مكان واحد</p>
+ <p>⚡ الجودة • الثقة • الخدمة المميزة ⚡</p>
+</header>
+
+<nav>
+ <a href="#products">المنتجات</a>
+ <a href="#cart">سلة المشتريات 🛒</a>
+ <a href="#contact">تواصل معنا</a>
+</nav>
+
+<main class="container">
+
+ <h2 class="title" id="products">🛍️ منتجاتنا الكهربائية</h2>
+ <input class="search" id="search" placeholder="ابحث عن منتج..." oninput="renderProducts()">
+
+ <div class="products" id="productsList"></div>
+
+ <section class="panel" id="cart">
+  <h2>🛒 سلة المشتريات</h2>
+  <div id="cartList">السلة فارغة حالياً.</div>
+  <h3 id="total">الإجمالي: 0</h3>
+  <button class="primary" onclick="checkout()">إرسال الطلب عبر واتساب</button>
+  <p class="small">الأسعار تجريبية ويمكن تعديلها لتناسب أسعار محلك.</p>
+ </section>
+
+ <section class="panel" id="contact">
+  <h2>📞 تواصل مع المحل</h2>
+  <p>اسم المحل: بن عبادي للمواد الكهربائية</p>
+  <p>للطلب والاستفسار تواصل معنا عبر واتساب.</p>
+  <input class="field" id="phone" placeholder="رقم واتساب المحل مع رمز الدولة">
+  <button class="primary" onclick="savePhone()">حفظ رقم واتساب</button>
+  <p class="small">مثال: 9677XXXXXXXX لرقم يمني. أدخل رقمك الحقيقي بدون علامة +.</p>
+  <a class="whatsapp" href="#" onclick="openWhatsApp(event)">التواصل عبر واتساب</a>
+ </section>
+
+</main>
+
+<footer>
+ <h3>بن عبادي للمواد الكهربائية</h3>
+ <p>نورٌ يضيء منزلك، وثقةٌ تدوم.</p>
+ <p>© جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+const products=[
+ {name:"مصباح LED",price:1500,icon:"💡"},
+ {name:"مفتاح كهربائي",price:1000,icon:"🔘"},
+ {name:"مقبس كهربائي",price:1200,icon:"🔌"},
+ {name:"سلك كهربائي",price:5000,icon:"〰️"},
+ {name:"قاطع كهربائي",price:3500,icon:"⚡"},
+ {name:"كشاف إنارة",price:8000,icon:"🔦"},
+ {name:"شريط عازل",price:500,icon:"🧰"},
+ {name:"لوحة توزيع",price:12000,icon:"🔲"},
+ {name:"حامل مصباح",price:700,icon:"💡"},
+ {name:"جرس كهربائي",price:2500,icon:"🔔"}
+];
+
+let cart=[];
+let whatsappNumber=localStorage.getItem("benabbadi_phone")||"";
+
+function renderProducts(){
+ const q=document.getElementById("search").value.trim().toLowerCase();
+ const list=document.getElementById("productsList");
+ list.innerHTML="";
+ products.forEach((p,i)=>{
+  if(!p.name.toLowerCase().includes(q))return;
+  list.innerHTML+=`
+   <article class="card">
+    <div class="product-icon">${p.icon}</div>
+    <h3>${p.name}</h3>
+    <div class="price">${p.price.toLocaleString("en-US")} ريال</div>
+    <button class="add" onclick="addToCart(${i})">إضافة إلى السلة</button>
+   </article>`;
+ });
+ if(!list.innerHTML)list.innerHTML="<p>لا توجد منتجات مطابقة.</p>";
+}
+
+function addToCart(i){
+ const found=cart.find(x=>x.i===i);
+ if(found)found.qty++;
+ else cart.push({i,qty:1});
+ renderCart();
+}
+
+function changeQty(i,amount){
+ const item=cart.find(x=>x.i===i);
+ if(!item)return;
+ item.qty+=amount;
+ cart=cart.filter(x=>x.qty>0);
+ renderCart();
+}
+
+function renderCart(){
+ const list=document.getElementById("cartList");
+ if(!cart.length)list.innerHTML="السلة فارغة حالياً.";
+ else list.innerHTML=cart.map(x=>`
+  <div style="padding:10px 0;border-bottom:1px solid #ddd">
+   ${products[x.i].name} × ${x.qty}
+   <button onclick="changeQty(${x.i},-1)">−</button>
+   <button onclick="changeQty(${x.i},1)">+</button>
+   <span>${(products[x.i].price*x.qty).toLocaleString("en-US")} ريال</span>
+  </div>`).join("");
+ const total=cart.reduce((s,x)=>s+products[x.i].price*x.qty,0);
+ document.getElementById("total").textContent="الإجمالي: "+total.toLocaleString("en-US")+" ريال";
+}
+
+function savePhone(){
+ let n=document.getElementById("phone").value.replace(/\D/g,"");
+ if(n.length<10){alert("يرجى إدخال رقم واتساب صحيح مع رمز الدولة.");return;}
+ whatsappNumber=n;
+ localStorage.setItem("benabbadi_phone",n);
+ alert("تم حفظ رقم واتساب على هذا الجهاز.");
+}
+
+function openWhatsApp(e){
+ e.preventDefault();
+ if(!whatsappNumber){
+  alert("أدخل رقم واتساب المحل واضغط حفظ رقم واتساب أولاً.");
+  return;
+ }
+ window.open("https://wa.me/"+whatsappNumber,"_blank");
+}
+
+function checkout(){
+ if(!cart.length){alert("أضف منتجاً إلى السلة أولاً.");return;}
+ if(!whatsappNumber){
+  alert("أدخل رقم واتساب المحل في قسم التواصل واحفظه أولاً.");
+  document.getElementById("contact").scrollIntoView();
+  return;
+ }
+ let msg="السلام عليكم، أريد طلب المنتجات التالية من بن عبادي للمواد الكهربائية:\n";
+ cart.forEach(x=>{
+  msg+="- "+products[x.i].name+" × "+x.qty+
+  " = "+(products[x.i].price*x.qty)+" ريال\n";
+ });
+ const total=cart.reduce((s,x)=>s+products[x.i].price*x.qty,0);
+ msg+="الإجمالي: "+total+" ريال";
+ window.open("https://wa.me/"+whatsappNumber+"?text="+encodeURIComponent(msg),"_blank");
+}
+
+if(whatsappNumber)document.getElementById("phone").value=whatsappNumber;
+renderProducts();
+renderCart();
+</script>
+
+</body>
+</html>
