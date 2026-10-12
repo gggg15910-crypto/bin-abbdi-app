@@ -15,28 +15,28 @@ h2{font-size:18px;color:#f2d58a;margin:20px 0 12px}.account{background:#102b20;b
 footer{color:#9bb6a4;text-align:center;font-size:11px;line-height:1.8;padding:14px}
 </style></head>
 <body>
-<header><div class="brand">☪ نور الإسلام</div><p>مقاطع إسلامية من حسابات مؤسسات إسلامية رسمية على فيسبوك وX فقط. لا توجد مقاطع من يوتيوب.</p></header>
+<header><div class="brand">☪ نور الإسلام</div><p>مقاطع إسلامية من حسابات مؤسسات إسلامية رسمية على فيسبوك وX فقط — بدون يوتيوب.</p></header>
 <main>
-<div class="notice">🔒 نختار الحسابات التي أمكن ربطها بموقع رسمي أو صفحة رسمية للمؤسسة، وليس اعتمادًا على علامة التوثيق وحدها. اضغط فيسبوك أو X لمشاهدة أحدث المنشورات والفيديوهات داخل التطبيق. قد تطلب المنصة تسجيل الدخول.</div>
-<button class="btn refresh" onclick="refreshPage()">↻ تحديث القائمة الآن</button>
+<div class="notice">نعتمد هنا على حسابات منشورة في دليل الموقع الرسمي للمؤسسة أو الجامعة. هذا يثبت ارتباط الحساب بالجهة، لكنه لا يعني بالضرورة أن المنصة تعرض شارة توثيق زرقاء. اضغط لفتح أحدث المنشورات والفيديوهات.</div>
+<button class="btn refresh" onclick="refreshPage()">↻ تحديث القائمة</button>
 <div id="updated" style="font-size:12px;color:#a8c8b4;margin:0 2px 16px"></div>
-<h2>الحسابات الإسلامية الرسمية</h2>
+<h2>حسابات إسلامية رسمية</h2>
 <section class="account">
-<div class="account-head"><div class="icon">🕋</div><div><div class="name">رئاسة الشؤون الدينية بالمسجد الحرام والمسجد النبوي</div><div class="verified">✓ روابط اجتماعية واردة من الصفحة الرسمية gph.gov.sa</div></div></div>
-<p class="desc">تلاوات، صلوات، خطب، ومحتوى من الحرمين الشريفين. الحسابات مرتبطة بصفحة الروابط الرسمية للجهة.</p>
-<div class="btnrow"><button class="btn" onclick="openSocial('https://www.facebook.com/profile.php?id=100088827892911')">📘 فيسبوك</button><button class="btn x" onclick="openSocial('https://x.com/gphmkh')">𝕏 منصة X</button></div>
+<div class="account-head"><div class="icon">🌙</div><div><div class="name">رابطة العالم الإسلامي</div><div class="verified">✓ روابط منشورة في الموقع الرسمي themwl.org</div></div></div>
+<p class="desc">أخبار ومبادرات ودروس ومقاطع إسلامية من رابطة العالم الإسلامي. افتح الحساب لمشاهدة أحدث المنشورات المتاحة.</p>
+<div class="btnrow"><button class="btn" onclick="openSocial('https://www.facebook.com/mwlorg')">📘 فيسبوك العربي</button><button class="btn x" onclick="openSocial('https://x.com/mwlorg')">𝕏 منصة X العربية</button></div>
 </section>
 <section class="account">
-<div class="account-head"><div class="icon">🌙</div><div><div class="name">رابطة العالم الإسلامي</div><div class="verified">✓ حسابات مرتبطة بالموقع الرسمي themwl.org</div></div></div>
-<p class="desc">أخبار ومبادرات ودروس ومحتوى إسلامي من رابطة العالم الإسلامي.</p>
-<div class="btnrow"><button class="btn" onclick="openSocial('https://www.facebook.com/mwlorg')">📘 فيسبوك</button><button class="btn x" onclick="openSocial('https://x.com/MWLOrg')">𝕏 منصة X</button></div>
+<div class="account-head"><div class="icon">🎓</div><div><div class="name">الجامعة الإسلامية العالمية بإسلام آباد</div><div class="verified">✓ الحسابات منشورة في دليل الجامعة الرسمي iiu.edu.pk</div></div></div>
+<p class="desc">جامعة إسلامية رسمية، تنشر أخبارها وأنشطتها الأكاديمية والدينية. الحسابات أدناه واردة في دليل التواصل الاجتماعي الخاص بالجامعة.</p>
+<div class="btnrow"><button class="btn" onclick="openSocial('https://web.facebook.com/iiu.isbpk')">📘 فيسبوك</button><button class="btn x" onclick="openSocial('https://x.com/IIUIarabic')">𝕏 الحساب العربي</button></div>
 </section>
-<h2>كيف يتم التحديث؟</h2>
-<div class="notice">تعرض المنصة أحدث المنشورات عند فتح حسابها، وتصل المقاطع الجديدة من المصدر مباشرة. زر التحديث يعيد تحميل صفحة التطبيق؛ أما التحديث التلقائي في الخلفية وجلب المقاطع داخل قائمة موحّدة فيحتاجان إلى واجهات رسمية وصلاحيات من فيسبوك وX. لا نعرض حسابات عشوائية ولا ننسخ الفيديوهات.</div>
-<footer>نور الإسلام · المصادر: المواقع الرسمية للجهات المذكورة<br>تشغيل الفيديو يعتمد على إتاحة المنشور العام ودعم المنصة داخل WebView.</footer>
+<h2>تشغيل المقاطع والتحديث</h2>
+<div class="notice">التطبيق يفتح منشورات الحسابات مباشرة داخل نافذته، مع دعم أفضل لملء الشاشة عند تشغيل الفيديو. عند فتح الحساب تظهر أحدث المنشورات التي تتيحها المنصة؛ زر التحديث يعيد تحميل صفحة التطبيق. لا يمكن ضمان تجميع الفيديوهات تلقائيًا في قائمة واحدة أو تحديثها في الخلفية دون واجهات رسمية وصلاحيات من فيسبوك وX. قد تطلب المنصة تسجيل الدخول، وقد تمنع بعض المقاطع تشغيلها داخل WebView.</div>
+<footer>نور الإسلام · مصادر الحسابات: الموقع الرسمي لرابطة العالم الإسلامي ودليل الجامعة الرسمي.<br>لا نستخدم يوتيوب أو حسابات مجهولة في هذه القائمة.</footer>
 </main>
 <script>
 function openSocial(url){location.href=url}
-function refreshPage(){document.getElementById('updated').textContent='تم تحديث صفحة التطبيق: '+new Date().toLocaleString('ar');location.reload()}
-document.getElementById('updated').textContent='آخر فتح: '+new Date().toLocaleString('ar');
+function refreshPage(){document.getElementById('updated').textContent='جارٍ تحديث الصفحة…';location.reload()}
+document.getElementById('updated').textContent='تم فتح الصفحة: '+new Date().toLocaleString('ar');
 </script></body></html>
