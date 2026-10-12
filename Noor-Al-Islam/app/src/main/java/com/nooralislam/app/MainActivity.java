@@ -26,10 +26,12 @@ public class MainActivity extends Activity {
         WebSettings settings = web.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setDomStorageEnabled(true);
+        settings.setDatabaseEnabled(true);
         settings.setMediaPlaybackRequiresUserGesture(true);
-        settings.setJavaScriptCanOpenWindowsAutomatically(false);
+        settings.setJavaScriptCanOpenWindowsAutomatically(true);
         settings.setSupportMultipleWindows(false);
-        settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
+        settings.setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
+        settings.setUserAgentString(settings.getUserAgentString());
         CookieManager.getInstance().setAcceptCookie(true);
         CookieManager.getInstance().setAcceptThirdPartyCookies(web, true);
         web.setWebChromeClient(new WebChromeClient());
@@ -39,7 +41,13 @@ public class MainActivity extends Activity {
             }
             @Override public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 String host = request.getUrl().getHost();
-                return host != null && !(host.equals("appassets.androidplatform.net") || host.endsWith("youtube.com") || host.endsWith("youtube-nocookie.com") || host.endsWith("googlevideo.com") || host.endsWith("ytimg.com") || host.endsWith("google.com") || host.equals("facebook.com") || host.endsWith(".facebook.com") || host.equals("fb.watch") || host.equals("x.com") || host.endsWith(".x.com") || host.equals("twitter.com") || host.endsWith(".twitter.com") || host.equals("t.co"));
+                if (host == null) return true;
+                return !(host.equals("appassets.androidplatform.net")
+                    || host.equals("facebook.com") || host.endsWith(".facebook.com")
+                    || host.equals("fb.watch") || host.endsWith(".fb.watch")
+                    || host.equals("x.com") || host.endsWith(".x.com")
+                    || host.equals("twitter.com") || host.endsWith(".twitter.com")
+                    || host.equals("t.co"));
             }
         });
         setContentView(web);
