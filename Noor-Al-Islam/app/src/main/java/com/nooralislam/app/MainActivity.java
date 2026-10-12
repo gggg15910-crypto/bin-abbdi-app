@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
             }
             @Override public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 String host = request.getUrl().getHost();
-                return host != null && !(host.equals("appassets.androidplatform.net") || host.endsWith("youtube.com") || host.endsWith("youtube-nocookie.com") || host.endsWith("googlevideo.com") || host.endsWith("ytimg.com") || host.endsWith("google.com"));
+                return host != null && !(host.equals("appassets.androidplatform.net") || host.endsWith("youtube.com") || host.endsWith("youtube-nocookie.com") || host.endsWith("googlevideo.com") || host.endsWith("ytimg.com") || host.endsWith("google.com") || host.equals("facebook.com") || host.endsWith(".facebook.com") || host.equals("fb.watch") || host.equals("x.com") || host.endsWith(".x.com") || host.equals("twitter.com") || host.endsWith(".twitter.com") || host.equals("t.co"));
             }
         });
         setContentView(web);
