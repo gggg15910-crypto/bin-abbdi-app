@@ -17,7 +17,7 @@ footer{color:#9bb6a4;text-align:center;font-size:11px;line-height:1.8;padding:14
 <body>
 <header><div class="brand">☪ نور الإسلام</div><p>مقاطع إسلامية من حسابات مؤسسات إسلامية رسمية على فيسبوك وX فقط — بدون يوتيوب.</p></header>
 <main>
-<div class="notice">نعتمد هنا على حسابات منشورة في دليل الموقع الرسمي للمؤسسة أو الجامعة. هذا يثبت ارتباط الحساب بالجهة، لكنه لا يعني بالضرورة أن المنصة تعرض شارة توثيق زرقاء. اضغط لفتح أحدث المنشورات والفيديوهات.</div>
+<div class="notice">أضفنا الحسابات التي أمكن مطابقة روابطها مع مواقع الجهات الرسمية. تنبيه: شارة التوثيق الزرقاء تتغير بحسب سياسات فيسبوك وX، ولا يمكن ضمان ظهورها الآن لكل حساب بمجرد أن الرابط رسمي؛ تحقق من الشارة داخل المنصة نفسها. اضغط لفتح أحدث المنشورات والفيديوهات.</div>
 <button class="btn refresh" onclick="refreshPage()">↻ تحديث القائمة</button>
 <div id="updated" style="font-size:12px;color:#a8c8b4;margin:0 2px 16px"></div>
 <h2>حسابات إسلامية رسمية</h2>
@@ -31,9 +31,19 @@ footer{color:#9bb6a4;text-align:center;font-size:11px;line-height:1.8;padding:14
 <p class="desc">جامعة إسلامية رسمية، تنشر أخبارها وأنشطتها الأكاديمية والدينية. الحسابات أدناه واردة في دليل التواصل الاجتماعي الخاص بالجامعة.</p>
 <div class="btnrow"><button class="btn" onclick="openSocial('https://web.facebook.com/iiu.isbpk')">📘 فيسبوك</button><button class="btn x" onclick="openSocial('https://x.com/IIUIarabic')">𝕏 الحساب العربي</button></div>
 </section>
+<section class="account">
+<div class="account-head"><div class="icon">🕌</div><div><div class="name">الأزهر الشريف — مصر</div><div class="verified">✓ روابط رسمية منشورة في بوابة الأزهر</div></div></div>
+<p class="desc">الحساب الرسمي للأزهر الشريف. أعلن المركز الإعلامي للأزهر روابطه الرسمية على فيسبوك وX، ونبّه إلى عدم اعتماد الحسابات الشخصية المنسوبة لشيخ الأزهر.</p>
+<div class="btnrow"><button class="btn" onclick="openSocial('https://www.facebook.com/OfficialAzharEg')">📘 فيسبوك الرسمي</button><button class="btn x" onclick="openSocial('https://x.com/AlAzhar')">𝕏 حساب X</button></div>
+</section>
+<section class="account">
+<div class="account-head"><div class="icon">📖</div><div><div class="name">وزارة الأوقاف المصرية</div><div class="verified">✓ روابط رسمية منشورة في المصادر الإعلامية</div></div></div>
+<p class="desc">أخبار الدعوة والأنشطة الدينية والمواد التوعوية من وزارة الأوقاف المصرية.</p>
+<div class="btnrow"><button class="btn" onclick="openSocial('https://www.facebook.com/AwkafOnline')">📘 فيسبوك الرسمي</button><button class="btn x" onclick="openSocial('https://x.com/AwkafOnline')">𝕏 حساب X</button></div>
+</section>
 <h2>تشغيل المقاطع والتحديث</h2>
 <div class="notice">التطبيق يفتح منشورات الحسابات مباشرة داخل نافذته، مع دعم أفضل لملء الشاشة عند تشغيل الفيديو. عند فتح الحساب تظهر أحدث المنشورات التي تتيحها المنصة؛ زر التحديث يعيد تحميل صفحة التطبيق. لا يمكن ضمان تجميع الفيديوهات تلقائيًا في قائمة واحدة أو تحديثها في الخلفية دون واجهات رسمية وصلاحيات من فيسبوك وX. قد تطلب المنصة تسجيل الدخول، وقد تمنع بعض المقاطع تشغيلها داخل WebView.</div>
-<footer>نور الإسلام · مصادر الحسابات: الموقع الرسمي لرابطة العالم الإسلامي ودليل الجامعة الرسمي.<br>لا نستخدم يوتيوب أو حسابات مجهولة في هذه القائمة.</footer>
+<footer>نور الإسلام · مصادر الروابط: المواقع الرسمية لرابطة العالم الإسلامي، الأزهر الشريف، وزارة الأوقاف المصرية، والجامعة الإسلامية العالمية بإسلام آباد.<br>لا نستخدم يوتيوب أو حسابات مجهولة في هذه القائمة.</footer>
 </main>
 <script>
 function openSocial(url){location.href=url}
