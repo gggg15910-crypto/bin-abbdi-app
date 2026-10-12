@@ -1,0 +1,33 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Extract Android project archive
+        run: |
+          unzip -o BinAbbadiAndroid_project.zip -d android-project
+          find android-project -maxdepth 4 -type f | head -100
+      - name: Build debug APK
+        run: |
+          cd android-project
+          if [ -f gradlew ]; then chmod +x gradlew; ./gradlew assembleDebug
+          elif [ -f */gradlew ]; then cd "$(dirname "$(find . -name gradlew -print -quit)")"; chmod +x gradlew; ./gradlew assembleDebug
+          else echo 'Gradle wrapper not found in project archive' >&2; exit 1; fi
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BinAbbadi-debug-apk
+          path: android-project/**/build/outputs/apk/debug/*.apk
