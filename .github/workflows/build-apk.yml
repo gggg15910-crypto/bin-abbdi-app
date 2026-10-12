@@ -1,3 +1,4 @@
+# Trigger Android APK build after checking the current project archive.
 name: Build Android APK
 
 on:
@@ -30,7 +31,7 @@ jobs:
 
       - name: Build debug APK
         run: |
-          PROJECT_DIR="$(find android-project -name build.gradle -maxdepth 4 -printf '%h\n' | head -1)"
+          PROJECT_DIR="$(find android-project -name build.gradle -maxdepth 4 -printf '%h\\n' | head -1)"
           if [ -z "$PROJECT_DIR" ]; then
             echo "Could not find Android project build.gradle" >&2
             exit 1
