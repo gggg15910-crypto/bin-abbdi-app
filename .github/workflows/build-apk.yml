@@ -11,23 +11,37 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
       - name: Extract Android project archive
         run: |
           unzip -o BinAbbadiAndroid_project.zip -d android-project
-          find android-project -maxdepth 4 -type f | head -100
+          find android-project -maxdepth 5 -type f | head -100
+
       - name: Build debug APK
         run: |
-          cd android-project
-          if [ -f gradlew ]; then chmod +x gradlew; ./gradlew assembleDebug
-          elif [ -f */gradlew ]; then cd "$(dirname "$(find . -name gradlew -print -quit)")"; chmod +x gradlew; ./gradlew assembleDebug
-          else echo 'Gradle wrapper not found in project archive' >&2; exit 1; fi
+          PROJECT_DIR="$(find android-project -name build.gradle -maxdepth 4 -printf '%h\n' | head -1)"
+          if [ -z "$PROJECT_DIR" ]; then
+            echo "Could not find Android project build.gradle" >&2
+            exit 1
+          fi
+          echo "Building project in: $PROJECT_DIR"
+          cd "$PROJECT_DIR"
+          gradle assembleDebug --stacktrace
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: BinAbbadi-debug-apk
           path: android-project/**/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
