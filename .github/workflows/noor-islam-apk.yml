@@ -39,3 +39,5 @@ jobs:
           path: Noor-Al-Islam/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 14
+
+# Rebuild trigger after updating the Islamic social accounts list.
