@@ -1,48 +1,35 @@
-# Trigger Android APK build after checking the current project archive.
 name: Build Android APK
 
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [ "main" ]
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout source
         uses: actions/checkout@v4
-
-      - name: Set up Java
+      - name: Set up Java 17
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: '8.9'
-
-      - name: Extract Android project archive
-        run: |
-          unzip -o BinAbbadiAndroid_project.zip -d android-project
-          find android-project -maxdepth 5 -type f | head -100
-
       - name: Build debug APK
-        run: |
-          PROJECT_DIR="$(find android-project -name build.gradle -maxdepth 4 -printf '%h\\n' | head -1)"
-          if [ -z "$PROJECT_DIR" ]; then
-            echo "Could not find Android project build.gradle" >&2
-            exit 1
-          fi
-          echo "Building project in: $PROJECT_DIR"
-          cd "$PROJECT_DIR"
-          gradle assembleDebug --stacktrace
-
-      - name: Upload APK
+        run: gradle assembleDebug --stacktrace
+      - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: BinAbbadi-debug-apk
-          path: android-project/**/build/outputs/apk/debug/*.apk
+          name: BinAbadi-Electric-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
