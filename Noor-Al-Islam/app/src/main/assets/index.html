@@ -1,28 +1,42 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#071c16"><title>نور الإسلام</title><style>*{box-sizing:border-box}html,body{margin:0;height:100%;background:#071c16;color:white;font-family:system-ui,Tahoma,Arial;overflow:hidden}header{position:fixed;z-index:10;top:0;right:0;left:0;padding:15px 16px;background:linear-gradient(#06130ff0,transparent);font-weight:bold;color:#f2d58a;font-size:21px;pointer-events:none}header small{display:block;color:#e3eee7;font-size:11px;font-weight:normal}#feed{height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none}.card{height:100dvh;position:relative;scroll-snap-align:start;background:radial-gradient(circle at 50% 35%,#246149,#071c16 68%)}.player{position:absolute;top:0;right:0;width:100%;height:100%;border:0;background:#000}.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(transparent 48%,#06130fc9);z-index:1}.caption{position:absolute;z-index:3;right:16px;left:76px;bottom:91px;pointer-events:none}.caption h2{font-size:21px}.caption p{font-size:14px;line-height:1.7}.actions{position:absolute;z-index:4;left:12px;bottom:112px;display:flex;flex-direction:column;gap:16px}.action{border:0;background:#ffffff35;color:white;border-radius:50%;width:48px;height:48px;font-size:22px}.action span{display:block;font-size:10px}.status{position:absolute;z-index:4;top:45%;right:15%;left:15%;text-align:center;background:#071c16d9;padding:14px;border-radius:14px;pointer-events:none}.bottom{position:fixed;bottom:0;left:0;right:0;height:62px;background:#06130ff2;display:flex;justify-content:space-around;align-items:center;z-index:10}.bottom button{background:none;border:0;color:#f2d58a;font-size:12px}.bottom b{display:block;font-size:19px}.social-panel{position:absolute;inset:76px 16px 78px;overflow:auto;background:#0d2b21;border:1px solid #32624d;border-radius:18px;padding:18px}.social-panel h2{color:#f2d58a}.social-btn{display:block;width:100%;margin:12px 0;padding:15px;border:1px solid #46785f;border-radius:12px;background:#174632;color:white;text-align:right;font-size:15px}.social-panel p{line-height:1.8;color:#d7e7dd;font-size:13px}</style></head><body><header>☪ نور الإسلام<small>شاهد المقاطع هنا مباشرة دون فتح تطبيق يوتيوب</small></header><main id="feed"></main><nav class="bottom"><button onclick="home()"><b>⌂</b>الرئيسية</button><button onclick="categories()"><b>▦</b>الأقسام</button><button onclick="savedPage()"><b>♡</b>المحفوظات</button><button onclick="socialPage()"><b>▶</b>مقاطع جديدة</button></nav><script>
-const videos=[
-{id:'dZTfXiPSZyE',title:'سورة الرحمن — مشاري العفاسي',desc:'تلاوة من القرآن الكريم',cat:'القرآن الكريم'},
-{id:'xrZALrmabb0',title:'أذكار الصباح والمساء — مشاري العفاسي',desc:'أذكار وأدعية',cat:'الأذكار والأدعية'}
-];
-let saved=JSON.parse(localStorage.getItem('noorSaved')||'[]');let feed=document.getElementById('feed');
-function render(list=videos){feed.innerHTML='';list.forEach((v,i)=>{let c=document.createElement('section');c.className='card';c.innerHTML=`<iframe class="player" src="https://www.youtube-nocookie.com/embed/${v.id}?playsinline=1&rel=0&controls=1&enablejsapi=1&origin=https%3A%2F%2Fappassets.androidplatform.net" title="${v.title}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><div class="shade"></div><div class="caption"><h2>${v.title}</h2><p>${v.desc}</p><p style="color:#f2d58a">#${v.cat}</p></div><div class="actions"><button class="action" onclick="toggle('${v.id}')">${saved.includes(v.id)?'★':'☆'}<span>حفظ</span></button><button class="action" onclick="share('${v.id}')">↗<span>مشاركة</span></button></div>`;feed.appendChild(c)})}
-function toggle(id){saved=saved.includes(id)?saved.filter(x=>x!==id):saved.concat(id);localStorage.setItem('noorSaved',JSON.stringify(saved));render()}
-function share(id){let u='https://www.youtube.com/watch?v='+id;if(navigator.share)navigator.share({title:'نور الإسلام',url:u}).catch(()=>{});else prompt('انسخ رابط المقطع',u)}
-function home(){render();feed.scrollTop=0}
-function categories(){let q=prompt('اكتب القسم: القرآن الكريم أو الأذكار والأدعية');if(q){let a=videos.filter(v=>v.cat.includes(q));render(a);if(!a.length)alert('لا توجد مقاطع بهذا القسم حاليًا.')}}
-function savedPage(){let a=videos.filter(v=>saved.includes(v.id));render(a);if(!a.length)alert('لم تحفظ مقاطع بعد.')}
-
-function socialPage(){
-feed.innerHTML='<section class="card"><div class="social-panel"><h2>مقاطع إسلامية جديدة</h2><p>اختر منصة لعرض أحدث نتائج البحث العامة. تتغير النتائج حسب المنشورات المتاحة وقد تطلب المنصة تسجيل الدخول.</p><button class="social-btn" onclick="goSocial(1)">📘 مقاطع إسلامية على فيسبوك</button><button class="social-btn" onclick="goSocial(2)">📗 تلاوات القرآن على فيسبوك</button><button class="social-btn" onclick="goSocial(3)">𝕏 مقاطع إسلامية حديثة على X / تويتر</button><button class="social-btn" onclick="goSocial(4)">🤲 أذكار ودعاء على X / تويتر</button><button class="social-btn" onclick="home()">↩ العودة إلى مقاطع التطبيق</button><p>تُحمّل النتائج من المنصة مباشرة عند فتحها. لا يتم تنزيل محتوى أصحاب المقاطع أو نسخه.</p></div></section>';
-}
-function goSocial(type){
-const urls=[
-'https://www.facebook.com/watch/search/?q='+encodeURIComponent('مقاطع إسلامية'),
-'https://www.facebook.com/watch/search/?q='+encodeURIComponent('تلاوات القرآن الكريم'),
-'https://x.com/search?q='+encodeURIComponent('مقاطع إسلامية')+'&src=typed_query&f=live',
-'https://x.com/search?q='+encodeURIComponent('أذكار دعاء')+'&src=typed_query&f=live'
-];
-location.href=urls[type-1]||urls[0];
-}
-
-render();
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#071c16"><title>نور الإسلام</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#071c16;color:#f5f7f5;font-family:system-ui,Tahoma,Arial}
+header{padding:22px 18px 16px;background:linear-gradient(135deg,#103e2c,#071c16);border-bottom:1px solid #2d654b}
+.brand{font-size:25px;color:#f2d58a;font-weight:800}header p{margin:8px 0 0;color:#d6e7dc;font-size:13px;line-height:1.8}
+main{padding:16px 14px 28px;max-width:650px;margin:auto}.notice{padding:12px 14px;border-radius:12px;background:#182f25;border:1px solid #365b47;color:#dce9df;font-size:12px;line-height:1.8;margin-bottom:16px}
+h2{font-size:18px;color:#f2d58a;margin:20px 0 12px}.account{background:#102b20;border:1px solid #2d6046;border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 8px 22px #0002}
+.account-head{display:flex;align-items:center;gap:12px}.icon{width:48px;height:48px;border-radius:14px;background:#1b5139;display:grid;place-items:center;font-size:25px;flex-shrink:0}
+.name{font-weight:800;font-size:16px}.verified{color:#9ce1b1;font-size:12px;margin-top:5px}.desc{color:#d4e4da;font-size:13px;line-height:1.8;margin:12px 0}
+.btnrow{display:grid;grid-template-columns:1fr 1fr;gap:9px}.btn{border:0;border-radius:11px;padding:13px 8px;font-weight:700;font-size:14px;color:white;background:#1c6745}.btn.x{background:#263b35;border:1px solid #658274}.btn.refresh{background:#f2d58a;color:#17251d;width:100%;margin:4px 0 16px}
+footer{color:#9bb6a4;text-align:center;font-size:11px;line-height:1.8;padding:14px}
+</style></head>
+<body>
+<header><div class="brand">☪ نور الإسلام</div><p>مقاطع إسلامية من حسابات مؤسسات إسلامية رسمية على فيسبوك وX فقط. لا توجد مقاطع من يوتيوب.</p></header>
+<main>
+<div class="notice">🔒 نختار الحسابات التي أمكن ربطها بموقع رسمي أو صفحة رسمية للمؤسسة، وليس اعتمادًا على علامة التوثيق وحدها. اضغط فيسبوك أو X لمشاهدة أحدث المنشورات والفيديوهات داخل التطبيق. قد تطلب المنصة تسجيل الدخول.</div>
+<button class="btn refresh" onclick="refreshPage()">↻ تحديث القائمة الآن</button>
+<div id="updated" style="font-size:12px;color:#a8c8b4;margin:0 2px 16px"></div>
+<h2>الحسابات الإسلامية الرسمية</h2>
+<section class="account">
+<div class="account-head"><div class="icon">🕋</div><div><div class="name">رئاسة الشؤون الدينية بالمسجد الحرام والمسجد النبوي</div><div class="verified">✓ روابط اجتماعية واردة من الصفحة الرسمية gph.gov.sa</div></div></div>
+<p class="desc">تلاوات، صلوات، خطب، ومحتوى من الحرمين الشريفين. الحسابات مرتبطة بصفحة الروابط الرسمية للجهة.</p>
+<div class="btnrow"><button class="btn" onclick="openSocial('https://www.facebook.com/profile.php?id=100088827892911')">📘 فيسبوك</button><button class="btn x" onclick="openSocial('https://x.com/gphmkh')">𝕏 منصة X</button></div>
+</section>
+<section class="account">
+<div class="account-head"><div class="icon">🌙</div><div><div class="name">رابطة العالم الإسلامي</div><div class="verified">✓ حسابات مرتبطة بالموقع الرسمي themwl.org</div></div></div>
+<p class="desc">أخبار ومبادرات ودروس ومحتوى إسلامي من رابطة العالم الإسلامي.</p>
+<div class="btnrow"><button class="btn" onclick="openSocial('https://www.facebook.com/mwlorg')">📘 فيسبوك</button><button class="btn x" onclick="openSocial('https://x.com/MWLOrg')">𝕏 منصة X</button></div>
+</section>
+<h2>كيف يتم التحديث؟</h2>
+<div class="notice">تعرض المنصة أحدث المنشورات عند فتح حسابها، وتصل المقاطع الجديدة من المصدر مباشرة. زر التحديث يعيد تحميل صفحة التطبيق؛ أما التحديث التلقائي في الخلفية وجلب المقاطع داخل قائمة موحّدة فيحتاجان إلى واجهات رسمية وصلاحيات من فيسبوك وX. لا نعرض حسابات عشوائية ولا ننسخ الفيديوهات.</div>
+<footer>نور الإسلام · المصادر: المواقع الرسمية للجهات المذكورة<br>تشغيل الفيديو يعتمد على إتاحة المنشور العام ودعم المنصة داخل WebView.</footer>
+</main>
+<script>
+function openSocial(url){location.href=url}
+function refreshPage(){document.getElementById('updated').textContent='تم تحديث صفحة التطبيق: '+new Date().toLocaleString('ar');location.reload()}
+document.getElementById('updated').textContent='آخر فتح: '+new Date().toLocaleString('ar');
 </script></body></html>
