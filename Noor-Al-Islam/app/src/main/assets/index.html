@@ -10,5 +10,19 @@ function share(id){let u='https://www.youtube.com/watch?v='+id;if(navigator.shar
 function home(){render();feed.scrollTop=0}
 function categories(){let q=prompt('اكتب القسم: القرآن الكريم أو الأذكار والأدعية');if(q){let a=videos.filter(v=>v.cat.includes(q));render(a);if(!a.length)alert('لا توجد مقاطع بهذا القسم حاليًا.')}}
 function savedPage(){let a=videos.filter(v=>saved.includes(v.id));render(a);if(!a.length)alert('لم تحفظ مقاطع بعد.')}
+
+function socialPage(){
+feed.innerHTML='<section class="card"><div class="social-panel"><h2>مقاطع إسلامية جديدة</h2><p>اختر منصة لعرض أحدث نتائج البحث العامة. تتغير النتائج حسب المنشورات المتاحة وقد تطلب المنصة تسجيل الدخول.</p><button class="social-btn" onclick="goSocial(1)">📘 مقاطع إسلامية على فيسبوك</button><button class="social-btn" onclick="goSocial(2)">📗 تلاوات القرآن على فيسبوك</button><button class="social-btn" onclick="goSocial(3)">𝕏 مقاطع إسلامية حديثة على X / تويتر</button><button class="social-btn" onclick="goSocial(4)">🤲 أذكار ودعاء على X / تويتر</button><button class="social-btn" onclick="home()">↩ العودة إلى مقاطع التطبيق</button><p>تُحمّل النتائج من المنصة مباشرة عند فتحها. لا يتم تنزيل محتوى أصحاب المقاطع أو نسخه.</p></div></section>';
+}
+function goSocial(type){
+const urls=[
+'https://www.facebook.com/watch/search/?q='+encodeURIComponent('مقاطع إسلامية'),
+'https://www.facebook.com/watch/search/?q='+encodeURIComponent('تلاوات القرآن الكريم'),
+'https://x.com/search?q='+encodeURIComponent('مقاطع إسلامية')+'&src=typed_query&f=live',
+'https://x.com/search?q='+encodeURIComponent('أذكار دعاء')+'&src=typed_query&f=live'
+];
+location.href=urls[type-1]||urls[0];
+}
+
 render();
 </script></body></html>
