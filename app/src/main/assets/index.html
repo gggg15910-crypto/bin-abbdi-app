@@ -1,0 +1,1707 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f766e">
+<meta name="color-scheme" content="light">
+<link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="بن عبادي">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="بن عبادي">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>بن عبادي لبيع المواد الكهربائية</title>
+<style>
+:root{color-scheme:light;--main:#0f766e;--main-dark:#0d635d;--dark:#123b3a;--bg:#f3f7f7;--card:#fff;--text:#172b2a;--muted:#64748b;--line:#dbe5e5;--red:#b91c1c;--gold:#b7791f}
+html,body{background-color:#f3f7f7 !important;color:#172b2a !important;min-height:100vh;margin:0}
+.app{background-color:#f3f7f7 !important;min-height:100vh}
+.top{background:#fff !important;color:#172b2a !important}
+.card,.panel{background:#fff !important;color:#172b2a !important}
+input,select,textarea{background:#fff !important;color:#172b2a !important}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;-webkit-tap-highlight-color:transparent}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:10px 14px;background:var(--main);color:#fff;font-weight:700;transition:background .2s}button:hover{background:var(--main-dark)}button.secondary{background:#e2eeee;color:var(--dark)}button.secondary:hover{background:#d0e2e2}button.danger{background:#b91c1c}button.danger:hover{background:#991b1b}button.small{padding:6px 9px;font-size:12px}button.warning{background:#d97706;color:#fff}button.warning:hover{background:#b45309}input,select,textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--text);min-width:0}input:focus,select:focus,textarea:focus{outline:2px solid var(--main);border-color:transparent}label{font-size:13px;color:#475569;display:block;margin:0 0 6px}h1,h2,h3,p{margin-top:0}.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}.side{background:var(--dark);color:white;padding:22px 14px}.brand{font-size:19px;font-weight:800;line-height:1.7;padding:8px 10px 22px;border-bottom:1px solid #ffffff25}.brand span{display:block;font-size:12px;color:#a7d7d1;font-weight:400}.nav{display:grid;gap:7px;margin-top:18px}.nav button{background:transparent;color:#d4e7e5;text-align:right;font-weight:500;padding:10px 12px;border-radius:8px}.nav button.active,.nav button:hover{background:#ffffff1b;color:#fff}.side-note{font-size:12px;color:#b9d1ce;line-height:1.8;margin:30px 8px;padding:10px;background:#ffffff10;border-radius:8px}.main{min-width:0;display:flex;flex-direction:column}.top{background:#fff;padding:15px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.top h1{font-size:19px;margin:0}.top small{color:var(--muted)}.content{padding:22px;max-width:1500px;margin:auto;width:100%;flex:1}.page{display:none}.page.active{display:block}.heading{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}.heading h2{margin:0;font-size:23px}.muted{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:20px}.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:17px;box-shadow:0 3px 12px #143d3d08}.stat small{color:var(--muted)}.stat strong{display:block;font-size:24px;margin-top:8px;color:var(--dark);overflow-wrap:anywhere}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.formgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:end}.field{min-width:0}.full{grid-column:1/-1}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}.tablewrap{overflow:auto;margin-top:12px;-webkit-overflow-scrolling:touch}table{width:100%;border-collapse:collapse;min-width:620px}th,td{text-align:right;padding:11px 9px;border-bottom:1px solid #edf1f1;font-size:13px;white-space:nowrap}th{background:#f5f9f9;color:#526766;font-weight:700}tr:last-child td{border-bottom:0}.badge{display:inline-block;padding:4px 8px;border-radius:30px;background:#d8f3e9;color:#116149;font-size:12px}.badge.low{background:#ffedd5;color:#9a3412}.badge.debt{background:#fee2e2;color:#991b1b}.badge.returned{background:#fee2e2;color:#991b1b;border:1px solid #fecaca}.badge.success{background:#dcfce7;color:#166534;border:1px solid #bbf7d0}.diff-pos{color:#16a34a;font-weight:bold}.diff-neg{color:#dc2626;font-weight:bold}.diff-zero{color:#475569;font-weight:bold}.hint{background:#effaf7;border:1px solid #c5e9df;border-radius:10px;padding:12px;font-size:13px;line-height:1.8}.notice{padding:10px;border-radius:9px;background:#fff7df;color:#805b0b;font-size:13px;margin-bottom:14px;border:1px solid #fde68a}.empty{padding:22px;text-align:center;color:var(--muted)}.hide{display:none!important}.menu-toggle{display:none}.footer-note{font-size:12px;color:var(--muted);line-height:1.8;margin-top:20px}.pill{background:#e0f2fe;color:#075985;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600}
+.highlight-install{animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(15,118,110,0.5)}70%{box-shadow:0 0 0 10px rgba(15,118,110,0)}100%{box-shadow:0 0 0 0 rgba(15,118,110,0)}}
+@media(max-width:900px){.app{grid-template-columns:1fr}.side{display:none}.side.open{display:block;position:fixed;top:0;right:0;bottom:0;width:260px;z-index:999;box-shadow:-4px 0 20px rgba(0,0,0,0.2)}.menu-toggle{display:inline-block}.top{padding:12px 16px}.content{padding:14px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:1fr}.formgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.cards{gap:8px}.card,.panel{padding:12px}.stat strong{font-size:19px}.formgrid{grid-template-columns:1fr}.heading h2{font-size:20px}.top h1{font-size:16px}}
+
+/* شريط تنقل أفقي سريع للجوال */
+.mobile-nav{display:none;background:#fff;border-bottom:1px solid var(--line);padding:8px 12px;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;gap:8px}
+.mobile-nav button{background:#edf6f5;color:var(--dark);padding:7px 13px;border-radius:20px;font-size:13px;font-weight:600;flex-shrink:0}
+.mobile-nav button.active{background:var(--main);color:#fff}
+@media(max-width:900px){.mobile-nav{display:flex}}
+
+/* تنسيقات الطباعة الدقيقة والفواتير والتقارير */
+#invoicePrint{display:none}
+@media print{
+  .side,.top,.mobile-nav,.no-print,button,form,.actions,.menu-toggle,.notice,.footer-note,.side-note{display:none!important}
+  body,html{background:#fff!important;color:#000!important;font-size:12pt;margin:0!important;padding:0!important}
+  .app{display:block!important;min-height:auto!important}
+  .content{padding:0!important;max-width:100%!important;margin:0!important}
+  .card,.panel{box-shadow:none!important;border:1px solid #ddd!important;break-inside:avoid}
+  table{width:100%!important;border-collapse:collapse!important;min-width:0!important}
+  th,td{border:1px solid #cbd5e1!important;padding:6px 8px!important}
+  th{background:#f1f5f9!important;color:#000!important}
+  
+  /* في وضع طباعة الفاتورة */
+  body.printing-invoice .page{display:none!important}
+  body.printing-invoice #invoicePrint{display:block!important;padding:15px!important}
+  
+  /* في وضع طباعة التقارير */
+  body:not(.printing-invoice) #invoicePrint{display:none!important}
+  body:not(.printing-invoice) .page{display:none!important}
+  body:not(.printing-invoice) .page.active{display:block!important}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side" id="sidebar">
+  <div class="brand">⚡ بن عبادي<span>لبيع المواد الكهربائية</span></div>
+  <nav class="nav">
+    <button class="active" data-page="dashboard" onclick="go('dashboard')">🏠 لوحة التحكم</button>
+    <button data-page="products" onclick="go('products')">📦 المنتجات والمخزون</button>
+    <button data-page="sales" onclick="go('sales')">🧾 المبيعات والفواتير</button>
+    <button data-page="purchases" onclick="go('purchases')">🛒 المشتريات</button>
+    <button data-page="people" onclick="go('people')">👥 العملاء والموردون</button>
+    <button data-page="debts" onclick="go('debts')">💳 الديون والتحصيل</button>
+    <button data-page="reports" onclick="go('reports')">📊 التقارير والأرباح</button>
+    <button data-page="assistant" onclick="go('assistant')">🤖 المساعد الذكي</button>
+    <button data-page="settings" onclick="go('settings')">💾 النسخ الاحتياطي والإعدادات</button>
+  </nav>
+  <div class="side-note">يحفظ التطبيق البيانات محليًا بأمان داخل متصفح هذا الجهاز، ويعمل بدون إنترنت.</div>
+</aside>
+
+<main class="main">
+<header class="top">
+  <div style="display:flex;align-items:center;gap:10px">
+    <button class="menu-toggle secondary" id="menuToggle" aria-label="القائمة">☰</button>
+    <div>
+      <h1 id="storeTitle">بن عبادي لبيع المواد الكهربائية</h1>
+      <small id="today"></small>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <span class="pill">⚡ تطبيق ويب جاهز</span>
+    <button id="pwaInstallBtn" class="small secondary" onclick="installPWA()">📲 تثبيت كبرنامج</button>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="active" data-page="dashboard" onclick="go('dashboard')">🏠 الرئيسية</button>
+  <button data-page="products" onclick="go('products')">📦 المنتجات</button>
+  <button data-page="sales" onclick="go('sales')">🧾 المبيعات</button>
+  <button data-page="purchases" onclick="go('purchases')">🛒 المشتريات</button>
+  <button data-page="people" onclick="go('people')">👥 العملاء/الموردين</button>
+  <button data-page="debts" onclick="go('debts')">💳 الديون</button>
+  <button data-page="reports" onclick="go('reports')">📊 التقارير</button>
+  <button data-page="assistant" onclick="go('assistant')">🤖 المساعد</button>
+  <button data-page="settings" onclick="go('settings')">💾 الإعدادات</button>
+</div>
+
+<div class="content">
+
+<!-- قسم لوحة التحكم -->
+<section class="page active" id="page-dashboard">
+ <div class="heading"><h2>لوحة التحكم</h2><button onclick="go('sales')">＋ فاتورة بيع جديدة</button></div>
+ <div class="cards">
+  <div class="card stat"><small>مبيعات اليوم</small><strong id="dSales">0 ر.ي</strong></div>
+  <div class="card stat"><small>إجمالي الفواتير النشطة</small><strong id="dInvoices">0</strong></div>
+  <div class="card stat"><small>قيمة المخزون بالتكلفة</small><strong id="dStock">0 ر.ي</strong></div>
+  <div class="card stat"><small>المبالغ المستحقة من العملاء</small><strong id="dDebt">0 ر.ي</strong></div>
+ </div>
+ <div class="grid2">
+  <div class="panel"><h3>تنبيهات المخزون</h3><div id="lowStock"></div></div>
+  <div class="panel"><h3>آخر فواتير البيع</h3><div id="recentSales"></div></div>
+ </div>
+ <p class="footer-note">تنبيه: تطبيق ويب متكامل لإدارة المبيعات والمخزون، يعمل دون اتصال بالإنترنت، ويمكن تغيير اسم المتجر والعملة من قسم الإعدادات.</p>
+</section>
+
+<!-- قسم المنتجات والمخزون -->
+<section class="page" id="page-products">
+ <div class="heading">
+  <h2>المنتجات والمخزون</h2>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button type="button" class="secondary small" onclick="seedDefaultProducts(false)">⚡ تعبئة أصناف المواد الكهربائية النموذجية</button>
+  </div>
+ </div>
+ <div class="panel">
+  <h3 id="productFormTitle">إضافة منتج جديد</h3>
+  <form id="productForm" class="formgrid">
+   <input type="hidden" id="pId">
+   <div class="field"><label>اسم المنتج *</label><input id="pName" required placeholder="مثال: سلك كهرباء 2.5 مم"></div>
+   <div class="field"><label>التصنيف</label><select id="pCategory"><option>أسلاك وكابلات</option><option>مفاتيح وأفياش</option><option>قواطع وحماية</option><option>إنارة ولمبات</option><option>مواسير وملحقات</option><option>أدوات كهربائية</option><option>أخرى</option></select></div>
+   <div class="field"><label>الوحدة</label><input id="pUnit" value="قطعة" placeholder="قطعة / لفة / متر / كرتون"></div>
+   <div class="field"><label>سعر الشراء (التكلفة)</label><input id="pCost" type="number" min="0" step="any" value="0"></div>
+   <div class="field"><label>سعر البيع *</label><input id="pPrice" type="number" min="0" step="any" required value="0"></div>
+   <div class="field"><label>الكمية الحالية</label><input id="pQty" type="number" min="0" step="any" value="0"></div>
+   <div class="field"><label>حد التنبيه (أقل كمية)</label><input id="pMin" type="number" min="0" step="any" value="3"></div>
+   <div class="actions full">
+     <button type="submit">حفظ المنتج</button>
+     <button type="button" class="secondary" onclick="resetProductForm()">إلغاء التعديل</button>
+   </div>
+  </form>
+ </div>
+
+ <div class="panel" style="margin-top:16px">
+  <div class="heading">
+    <h3 style="margin:0">قائمة المنتجات بالمستودع</h3>
+    <div style="min-width:220px"><input id="productSearch" placeholder="🔍 ابحث عن منتج أو تصنيف..." oninput="renderProducts()"></div>
+  </div>
+  <div class="tablewrap" id="productsTable"></div>
+ </div>
+
+ <div class="panel" style="margin-top:16px">
+  <div class="heading">
+   <div>
+    <h3 style="margin:0">📋 تسوية وجرد المستودع التلقائي</h3>
+    <span class="muted" style="font-size:12px">مطابقة الجرد الفعلي في المحل مع رصيد النظام واحتساب الفروقات وتعديل المخزون تلقائيًا</span>
+   </div>
+  </div>
+  <form id="adjustmentForm" class="formgrid">
+   <div class="field"><label>الصنف المراد جرده / تسويته *</label><select id="adjProduct" required onchange="onAdjProductChange()"></select></div>
+   <div class="field"><label>الرصيد الدفتري الحالي</label><input id="adjCurrentQty" readonly placeholder="0"></div>
+   <div class="field"><label>الجرد الفعلي بالمستودع *</label><input id="adjActualQty" type="number" min="0" step="any" required placeholder="الكمية الموجودة فعلياً" oninput="calcAdjDiff()"></div>
+   <div class="field"><label>الفارق التلقائي (+فائض / -عجز)</label><input id="adjDiff" readonly placeholder="الفارق المحسوب" style="font-weight:bold"></div>
+   <div class="field"><label>سبب التسوية</label><select id="adjReason"><option>جرد دوري روتيني</option><option>عجز / نقص غير مبرر</option><option>فائض في المخزون</option><option>تالف / كسر / معطوب</option><option>تصحيح خطأ إدخال سابق</option><option>أخرى</option></select></div>
+   <div class="field"><label>ملاحظات التسوية</label><input id="adjNotes" placeholder="رقم محضر الجرد أو ملاحظات توضيحية"></div>
+   <div class="actions full"><button type="submit">اعتماد التسوية وتحديث المستودع تلقائيًا</button></div>
+  </form>
+  <div style="margin-top:18px">
+   <h4 style="margin:12px 0 8px">سجل حركات تسوية وجرد المستودع</h4>
+   <div class="tablewrap" id="adjustmentsTable"></div>
+  </div>
+ </div>
+</section>
+
+<!-- قسم المبيعات والفواتير -->
+<section class="page" id="page-sales">
+ <div class="heading"><h2>المبيعات والفواتير</h2><span class="muted">إنشاء فاتورة بيع وتحديث رصيد المستودع والديون تلقائيًا</span></div>
+ <div class="panel"><h3>فاتورة بيع جديدة</h3>
+  <form id="saleForm" class="formgrid">
+   <div class="field"><label>العميل</label><select id="saleCustomer"></select></div>
+   <div class="field"><label>المنتج *</label><select id="saleProduct" required></select></div>
+   <div class="field"><label>الكمية *</label><input id="saleQty" type="number" min="0.01" step="any" value="1" required></div>
+   <div class="field"><label>سعر الوحدة *</label><input id="salePrice" type="number" min="0" step="any" required></div>
+   <div class="field"><label>المدفوع الآن</label><input id="salePaid" type="number" min="0" step="any" value="0"></div>
+   <div class="field"><label>ملاحظات</label><input id="saleNotes" placeholder="اختياري"></div>
+   <div class="field"><label>الإجمالي المتوقع</label><input id="saleTotal" readonly value="0"></div>
+   <div class="actions full">
+     <button type="submit">حفظ الفاتورة</button>
+     <button type="button" class="secondary" onclick="printLatestInvoice()">طباعة آخر فاتورة</button>
+   </div>
+  </form>
+ </div>
+ <div class="panel" style="margin-top:16px"><h3>سجل الفواتير</h3><div class="tablewrap" id="salesTable"></div></div>
+</section>
+
+<!-- قسم المشتريات وإضافة البضاعة -->
+<section class="page" id="page-purchases">
+ <div class="heading"><h2>المشتريات وإضافة البضاعة</h2></div>
+ <div class="panel">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+   <h3 style="margin:0">تسجيل عملية شراء</h3>
+   <button type="button" class="small secondary" id="btnToggleNewProd" onclick="toggleNewProductFields()">➕ صنف جديد غير مسجل في المستودع</button>
+  </div>
+  <form id="purchaseForm" class="formgrid">
+   <div class="field"><label>المورد</label><select id="purchaseSupplier"></select></div>
+   <div class="field"><label>المنتج *</label><select id="purchaseProduct" required onchange="onPurchaseProductChange()"></select></div>
+
+   <!-- قسم الإضافة التلقائية لصنف جديد من فاتورة الشراء -->
+   <div id="newProductSection" class="full" style="display:none;background:#f8fafc;padding:14px;border-radius:10px;border:1px dashed var(--main);margin-bottom:12px">
+    <div style="font-weight:bold;margin-bottom:10px;color:var(--dark);display:flex;justify-content:space-between;align-items:center">
+     <span>📦 بيانات الصنف الجديد (سيتم إدراجه في المستودع تلقائيًا):</span>
+     <button type="button" class="small secondary" onclick="toggleNewProductFields(false)">إلغاء الصنف الجديد</button>
+    </div>
+    <div class="formgrid">
+     <div class="field"><label>اسم الصنف الجديد *</label><input id="newPName" placeholder="مثال: مفتاح مكيف 45 أمبير"></div>
+     <div class="field"><label>التصنيف</label><select id="newPCategory"><option>أسلاك وكابلات</option><option>مفاتيح وأفياش</option><option>قواطع وحماية</option><option>إنارة ولمبات</option><option>مواسير وملحقات</option><option>أدوات كهربائية</option><option>أخرى</option></select></div>
+     <div class="field"><label>الوحدة</label><input id="newPUnit" value="قطعة" placeholder="قطعة / لفة / متر / كرتون"></div>
+     <div class="field"><label>سعر البيع المقترح للجمهور</label><input id="newPPrice" type="number" min="0" step="any" placeholder="سعر البيع"></div>
+     <div class="field"><label>حد التنبيه (أقل كمية)</label><input id="newPMin" type="number" min="0" step="any" value="3"></div>
+    </div>
+   </div>
+   <div class="field"><label>الكمية *</label><input id="purchaseQty" type="number" min="0.01" step="any" value="1" required></div>
+   <div class="field"><label>تكلفة الوحدة *</label><input id="purchaseCost" type="number" min="0" step="any" required></div>
+   <div class="field"><label>المبلغ المدفوع للمورد</label><input id="purchasePaid" type="number" min="0" step="any" value="0"></div>
+   <div class="field"><label>ملاحظات</label><input id="purchaseNotes" placeholder="اختياري"></div>
+   <div class="actions full"><button type="submit">حفظ المشتريات وتحديث المخزون</button></div>
+  </form>
+ </div>
+ <div class="panel" style="margin-top:16px"><h3>سجل المشتريات</h3><div class="tablewrap" id="purchasesTable"></div></div>
+</section>
+
+<!-- قسم العملاء والموردين -->
+<section class="page" id="page-people">
+ <div class="heading"><h2>العملاء والموردون</h2></div>
+ <div class="panel"><h3>إضافة عميل أو مورد</h3>
+  <form id="personForm" class="formgrid">
+   <div class="field"><label>الاسم *</label><input id="personName" required placeholder="الاسم الكامل أو اسم المؤسسة"></div>
+   <div class="field"><label>النوع</label><select id="personType"><option value="customer">عميل</option><option value="supplier">مورد</option></select></div>
+   <div class="field"><label>الهاتف</label><input id="personPhone" placeholder="رقم الهاتف للتواصل"></div>
+   <div class="field full"><label>ملاحظات</label><input id="personNotes" placeholder="عنوان العميل/المورد أو ملاحظات التعامل"></div>
+   <div class="actions full"><button type="submit">حفظ الاسم</button></div>
+  </form>
+ </div>
+ <div class="panel" style="margin-top:16px"><h3>قائمة العملاء والموردين</h3><div class="tablewrap" id="peopleTable"></div></div>
+</section>
+
+<!-- قسم الديون والتحصيل -->
+<section class="page" id="page-debts">
+ <div class="heading"><h2>الديون والتحصيل والسداد</h2></div>
+ <div class="cards">
+  <div class="card stat"><small>إجمالي ديون العملاء (مستحقات لنا)</small><strong id="customerDebt">0</strong></div>
+  <div class="card stat"><small>إجمالي مستحقات الموردين (التزامات علينا)</small><strong id="supplierDebt">0</strong></div>
+ </div>
+ <div class="panel"><h3>تسجيل دفعة أو تحصيل</h3>
+  <form id="paymentForm" class="formgrid">
+   <div class="field"><label>نوع العملية</label><select id="paymentType"><option value="collect">تحصيل من عميل</option><option value="pay">سداد لمورد</option></select></div>
+   <div class="field"><label>الطرف *</label><select id="paymentPerson" required></select></div>
+   <div class="field"><label>المبلغ *</label><input id="paymentAmount" type="number" min="0.01" step="any" required placeholder="0"></div>
+   <div class="field"><label>ملاحظات</label><input id="paymentNotes" placeholder="رقم السند أو تفاصيل التحويل"></div>
+   <div class="actions full"><button type="submit">تسجيل الدفعة</button></div>
+  </form>
+ </div>
+ <div class="panel" style="margin-top:16px"><h3>سجل الدفعات والتحصيلات</h3><div class="tablewrap" id="paymentsTable"></div></div>
+ <p class="footer-note">يتم احتساب ديون العملاء من فواتير البيع غير المسددة مع استبعاد الفواتير المرتجعة، ومستحقات الموردين من المشتريات غير المسددة، وتُسجّل الدفعات لتخفيضها.</p>
+</section>
+
+<!-- قسم التقارير والأرباح -->
+<section class="page" id="page-reports">
+ <div class="heading"><h2>التقارير والأرباح</h2><button type="button" class="secondary" onclick="printReport()">🖨️ طباعة التقرير</button></div>
+ <div class="cards">
+  <div class="card stat"><small>إجمالي المبيعات النشطة</small><strong id="rSales">0</strong></div>
+  <div class="card stat"><small>تكلفة البضاعة المباعة</small><strong id="rCost">0</strong></div>
+  <div class="card stat"><small>الربح التقديري المحقق</small><strong id="rProfit">0</strong></div>
+  <div class="card stat"><small>عدد أصناف المستودع</small><strong id="rProducts">0</strong></div>
+ </div>
+ <div class="panel"><h3>ملخص المبيعات والأرباح حسب الصنف</h3><div class="tablewrap" id="reportTable"></div></div>
+ <p class="footer-note">الربح التقديري = سعر البيع ناقص تكلفة المنتج المسجلة وقت البيع (للفواتير النشطة فقط). لا يشمل المصاريف التشغيلية.</p>
+</section>
+
+<!-- قسم المساعد الذكي -->
+<section class="page" id="page-assistant">
+ <div class="heading"><h2>المساعد الذكي للتاجر (محلي أو عبر الذكاء الاصطناعي)</h2></div>
+ <div class="notice">يتضمن التطبيق <b>أدوات تحليل ذكية محلية تعمل فورًا بدون إنترنت أو مفاتيح API</b>، إضافة إلى إمكانية الربط الاختياري بنماذج Google Gemini أو Claude عند إدخال مفتاح API خاص بك.</div>
+ 
+ <div class="panel" style="margin-bottom:16px">
+  <h3>⚡ أدوات التحليل الذكية السريعة (بدون إنترنت أو API)</h3>
+  <p class="muted" style="font-size:13px">تحليلات فورية مبنية على بيانات المستودع والمبيعات المسجلة محلياً:</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+    <button type="button" class="secondary small" onclick="runLocalAI('stock')">📦 نواقص واقتراحات إعادة الطلب</button>
+    <button type="button" class="secondary small" onclick="runLocalAI('profit')">📈 تحليل المبيعات والأرباح</button>
+    <button type="button" class="secondary small" onclick="runLocalAI('pricing')">💡 مراجعة أسعار الشراء والبيع</button>
+    <button type="button" class="secondary small" onclick="runLocalAI('debts')">💳 تحليل الديون والتحصيل</button>
+    <button type="button" class="secondary small" onclick="runLocalAI('summary')">📑 ملخص شامل للمحل</button>
+  </div>
+  <div id="localAIAnswer" class="hint" style="white-space:pre-line;line-height:1.8">انقر على أي أداة أعلاه للحصول على تقرير تحليلي فوري للمستودع والمحل.</div>
+ </div>
+
+ <div class="panel" style="margin-bottom:16px">
+  <h3>إعدادات الذكاء الاصطناعي السحابي الاختياري (Gemini / Claude)</h3>
+  <div class="formgrid" style="margin-bottom:12px">
+    <div class="field"><label>نموذج الذكاء الاصطناعي</label><select id="aiProvider"><option value="gemini" selected>Google Gemini Flash (سريع وخفيف)</option><option value="claude">Claude 3.5 Sonnet (Anthropic)</option></select></div>
+    <div class="field full"><label id="apiKeyLabel">مفتاح Google Gemini API Key</label><input id="aiKey" type="password" autocomplete="off" placeholder="ألصق مفتاح Gemini هنا (AIzaSy...)"></div>
+  </div>
+  <div class="actions">
+    <button type="button" onclick="saveAIKey()">حفظ المفتاح على هذا الجهاز</button>
+    <button type="button" class="secondary" onclick="openAPIKeySite()">الحصول على مفتاح API مجاناً</button>
+    <button type="button" class="secondary" onclick="clearAIKey()">حذف المفتاح</button>
+  </div>
+  <p id="aiStatus" class="muted" style="font-size:12px;margin:10px 0 0">الذكاء الاصطناعي السحابي غير مفعّل حتى تضيف مفتاح API.</p>
+ </div>
+ <div class="panel">
+  <label>اكتب سؤالك أو استشارتك للمساعد الذكي</label>
+  <textarea id="assistantInput" rows="3" placeholder="مثال: حلل مبيعاتي واقترح المواد الكهربائية التي تحتاج إلى شراء عاجل، وما هي النصائح لزيادة الأرباح؟"></textarea>
+  <div class="actions">
+    <button type="button" id="askAIButton" onclick="askAssistant()">اسأل المساعد الذكي</button>
+    <button type="button" class="secondary" onclick="assistantExamples()">تحليل مقترح سريع</button>
+  </div>
+  <div id="assistantAnswer" class="hint hide" style="margin-top:15px"></div>
+ </div>
+</section>
+
+<!-- قسم الإعدادات والنسخ الاحتياطي -->
+<section class="page" id="page-settings">
+ <div class="heading"><h2>الإعدادات والنسخ الاحتياطي</h2></div>
+ <div class="grid2">
+  <div class="panel"><h3>بيانات المحل</h3><form id="settingsForm">
+   <div class="field"><label>اسم المحل / المتجر</label><input id="settingName" value="بن عبادي لبيع المواد الكهربائية"></div>
+   <div class="field" style="margin-top:12px"><label>العملة المعروضة</label><select id="settingCurrency"><option value="ر.ي">ريال يمني (ر.ي)</option><option value="ر.س">ريال سعودي (ر.س)</option><option value="دولار">$ دولار</option></select></div>
+   <div class="actions"><button type="submit">حفظ الإعدادات</button></div>
+  </form></div>
+  <div class="panel"><h3>النسخ الاحتياطي</h3><p class="muted" style="font-size:13px;line-height:1.8">حمّل ملف بياناتك بصيغة JSON للاحتفاظ به، أو استعد نسخة سبق تنزيلها. الاستعادة تستبدل البيانات الحالية.</p><div class="actions"><button type="button" onclick="exportBackup()">⬇ تنزيل نسخة احتياطية</button><label class="secondary" style="display:inline-block;padding:10px 14px;border-radius:10px;cursor:pointer">⬆ استعادة نسخة<input type="file" id="restoreFile" accept=".json,application/json" class="hide"></label></div><div class="actions"><button type="button" class="danger" onclick="clearAllData()">حذف كل البيانات</button></div></div>
+ </div>
+ <div class="panel" style="margin-top:16px"><h3>تعبئة المستودع بالمواد الكهربائية</h3><p class="muted">يمكنك بنقرة واحدة إدراج باقة متكاملة من المواد والأصناف الكهربائية النموذجية للمستودع (أسلاك، لمبات، قواطع، مفاتيح) لتسهيل بدء العمل والبيع الفوري.</p><button type="button" class="secondary" onclick="seedDefaultProducts(false)">⚡ إضافة باقة المواد الكهربائية النموذجية للمستودع</button></div>
+ <p class="footer-note">ملاحظة أمان: البيانات محفوظة محلياً في ذاكرة التخزين الآمنة للمتصفح (localStorage) على جهازك ولا تُشارك عبر خوادم خارجية.</p>
+</section>
+
+</div><!-- content -->
+
+<!-- الحاوية المخصصة لطباعة الفواتير الاحترافية (مستقلة عن الصفحات لتفادي الإخفاء) -->
+<div id="invoicePrint"></div>
+
+</main>
+</div>
+
+<script>
+// ==================== محرك التخزين الآمن المتوافق مع المتصفحات وهواتف أندرويد ====================
+var memoryStore = {};
+var safeStorage = {
+  getItem: function(key) {
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        var v = window.localStorage.getItem(key);
+        if (v !== null) return v;
+      }
+    } catch(e) {
+      console.warn('localStorage getItem error, fallback to memory', e);
+    }
+    return (key in memoryStore) ? memoryStore[key] : null;
+  },
+  setItem: function(key, val) {
+    var strVal = String(val);
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.setItem(key, strVal);
+      }
+    } catch(e) {
+      console.warn('localStorage setItem error, fallback to memory', e);
+    }
+    memoryStore[key] = strVal;
+  },
+  removeItem: function(key) {
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.removeItem(key);
+      }
+    } catch(e) {
+      console.warn('localStorage removeItem error', e);
+    }
+    delete memoryStore[key];
+  }
+};
+
+const KEY = 'binabadi_electric_store_v1';
+
+function getDefaultElectricalProducts(){
+  return [
+    { id: 1, name: 'سلك نحاس معزول 1.5 مم (لفة 100 ياردة)', category: 'أسلاك وكابلات', unit: 'لفة', cost: 4500, price: 5500, qty: 25, min: 5 },
+    { id: 2, name: 'سلك نحاس معزول 2.5 مم (لفة 100 ياردة)', category: 'أسلاك وكابلات', unit: 'لفة', cost: 7500, price: 9000, qty: 30, min: 5 },
+    { id: 3, name: 'سلك نحاس معزول 4 مم (لفة 100 ياردة)', category: 'أسلاك وكابلات', unit: 'لفة', cost: 12000, price: 14500, qty: 15, min: 4 },
+    { id: 4, name: 'كابل مسلح 3×6 مم للأحمال والمكيفات', category: 'أسلاك وكابلات', unit: 'متر', cost: 1800, price: 2300, qty: 80, min: 20 },
+    { id: 5, name: 'مفتاح كهرباء مفرد 1 خط جداري ديكور', category: 'مفاتيح وأفياش', unit: 'حبة', cost: 350, price: 500, qty: 70, min: 15 },
+    { id: 6, name: 'مفتاح كهرباء مزدوج 2 خط جداري ديكور', category: 'مفاتيح وأفياش', unit: 'حبة', cost: 500, price: 750, qty: 50, min: 10 },
+    { id: 7, name: 'فيش كهرباء ثلاثي 13A مع مفتاح ولمبة بيان', category: 'مفاتيح وأفياش', unit: 'حبة', cost: 650, price: 900, qty: 65, min: 12 },
+    { id: 8, name: 'مفتاح سخان / مكيف عالي التحمل 45 أمبير', category: 'مفاتيح وأفياش', unit: 'حبة', cost: 1400, price: 2000, qty: 25, min: 5 },
+    { id: 9, name: 'لمبة ليد LED 9 واط أبيض موفرة للطاقة', category: 'إنارة ولمبات', unit: 'حبة', cost: 400, price: 600, qty: 120, min: 20 },
+    { id: 10, name: 'لمبة ليد LED 18 واط أبيض قوية', category: 'إنارة ولمبات', unit: 'حبة', cost: 750, price: 1100, qty: 90, min: 15 },
+    { id: 11, name: 'كشاف بنل ليد سقفي غاطس 12 واط دائري', category: 'إنارة ولمبات', unit: 'حبة', cost: 1200, price: 1800, qty: 40, min: 8 },
+    { id: 12, name: 'قاطع تيار أوتوماتيك مفرد 16A حماية MCB', category: 'قواطع وحماية', unit: 'حبة', cost: 1100, price: 1600, qty: 35, min: 6 },
+    { id: 13, name: 'قاطع تيار أوتوماتيك مفرد 32A حماية MCB', category: 'قواطع وحماية', unit: 'حبة', cost: 1300, price: 1900, qty: 30, min: 6 },
+    { id: 14, name: 'قاطع تفاضلي حماية من الصعق ELCB 40A', category: 'قواطع وحماية', unit: 'حبة', cost: 5500, price: 7500, qty: 10, min: 3 },
+    { id: 15, name: 'ماسورة تمديدات بلاستيك 20 مم PVC', category: 'مواسير وملحقات', unit: 'عود', cost: 300, price: 450, qty: 100, min: 20 },
+    { id: 16, name: 'كوع توصيل مواسير 20 مم PVC', category: 'مواسير وملحقات', unit: 'حبة', cost: 50, price: 100, qty: 200, min: 30 },
+    { id: 17, name: 'شطرطون عازل أصلي مقاوم للحرارة (تيب)', category: 'أدوات كهربائية', unit: 'حبة', cost: 150, price: 250, qty: 150, min: 25 },
+    { id: 18, name: 'مفك فاحص جهد ديجيتال (تيستر كهرباء)', category: 'أدوات كهربائية', unit: 'حبة', cost: 450, price: 700, qty: 35, min: 5 }
+  ];
+}
+
+function getDefaultPeople(){
+  return [
+    { id: 1, name: 'عميل عام نقدي', type: 'customer', phone: '', notes: 'مبيعات المحل المباشرة' },
+    { id: 2, name: 'شركة السعيد لتوريد الكابلات والمواد', type: 'supplier', phone: '777000111', notes: 'مورد معتمد للأسلاك والكابلات' },
+    { id: 3, name: 'مؤسسة النور للإنارة واللمبات', type: 'supplier', phone: '777222333', notes: 'مورد إضاءة وكشافات' }
+  ];
+}
+
+const emptyDB = () => ({
+  settings: { name: 'بن عبادي لبيع المواد الكهربائية', currency: 'ر.ي' },
+  products: getDefaultElectricalProducts(),
+  people: getDefaultPeople(),
+  sales: [],
+  purchases: [],
+  payments: [],
+  adjustments: [],
+  nextId: 100
+});
+
+let db = loadDB(), latestInvoiceId = null;
+
+function loadDB(){
+  try{
+    const raw = safeStorage.getItem(KEY);
+    if(raw){
+      const x = JSON.parse(raw);
+      if(x && x.products){
+        const merged = { ...emptyDB(), ...x, settings: { ...emptyDB().settings, ...(x.settings || {}) } };
+        if(!merged.adjustments) merged.adjustments = [];
+        if(!merged.products.length){
+          merged.products = getDefaultElectricalProducts();
+        }
+        return merged;
+      }
+    }
+    return emptyDB();
+  }catch(e){
+    console.error('Error loading DB:', e);
+    return emptyDB();
+  }
+}
+
+function seedDefaultProducts(force){
+  if(!force && db.products.length > 0){
+    if(!confirm('المستودع يحتوي حالياً على أصناف. هل تريد إضافة باقة المواد الكهربائية النموذجية دون مسح الأصناف الحالية؟')) return;
+  }
+  const defaults = getDefaultElectricalProducts();
+  let added = 0;
+  defaults.forEach(item => {
+    if(!db.products.some(p => p.name === item.name)){
+      db.products.push({ ...item, id: id() });
+      added++;
+    }
+  });
+  save();
+  alert(`تمت تعبئة المستودع بنجاح! تم إدراج ${added} صنف جديد من المواد الكهربائية.`);
+}
+
+function save(){
+  safeStorage.setItem(KEY, JSON.stringify(db));
+  renderAll();
+}
+
+function id(){
+  return db.nextId++;
+}
+
+function esc(s){
+  if(s === null || s === undefined) return '';
+  return String(s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+
+function money(n){
+  return (Number(n)||0).toLocaleString('ar-YE', { maximumFractionDigits: 2 }) + ' ' + (db.settings.currency || 'ر.ي');
+}
+
+function dateText(d = new Date()){
+  return new Date(d).toLocaleDateString('ar-YE', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+function stamp(){
+  return new Date().toISOString();
+}
+
+function table(headers, rows){
+  if(!rows.length) return '<div class="empty">لا توجد بيانات حتى الآن</div>';
+  return '<table><thead><tr>' + headers.map(h => '<th>' + h + '</th>').join('') + '</tr></thead><tbody>' + rows.join('') + '</tbody></table>';
+}
+
+function renderAll(){
+  var storeTitle = document.getElementById('storeTitle');
+  if(storeTitle) storeTitle.textContent = db.settings.name;
+  document.title = db.settings.name;
+  var todayEl = document.getElementById('today');
+  if(todayEl) todayEl.textContent = dateText();
+  
+  renderProducts();
+  refreshSelects();
+  renderSales();
+  renderPurchases();
+  renderAdjustments();
+  renderPeople();
+  renderPayments();
+  renderDashboard();
+  renderReports();
+  
+  var setN = document.getElementById('settingName');
+  if(setN) setN.value = db.settings.name;
+  var setC = document.getElementById('settingCurrency');
+  if(setC) setC.value = db.settings.currency;
+}
+
+// ----------------- المنتجات -----------------
+function renderProducts(){
+  var pSearchEl = document.getElementById('productSearch');
+  var q = (pSearchEl && pSearchEl.value ? pSearchEl.value : '').trim().toLowerCase();
+  let list = db.products.filter(p => (p.name + ' ' + (p.category || '')).toLowerCase().includes(q));
+  var tableEl = document.getElementById('productsTable');
+  if(!tableEl) return;
+  tableEl.innerHTML = table(
+    ['المنتج', 'التصنيف', 'الكمية', 'شراء', 'بيع', 'الربح/وحدة', 'الحالة', 'إجراء'],
+    list.map(p => `<tr>
+      <td><b>${esc(p.name)}</b><br><small class="muted">${esc(p.unit || 'قطعة')}</small></td>
+      <td>${esc(p.category || 'أخرى')}</td>
+      <td><b>${p.qty}</b></td>
+      <td>${money(p.cost)}</td>
+      <td>${money(p.price)}</td>
+      <td><span style="color:#16a34a;font-weight:bold">${money(p.price - p.cost)}</span></td>
+      <td>${Number(p.qty) <= Number(p.min || 0) ? '<span class="badge low">مخزون منخفض</span>' : '<span class="badge">متوفر</span>'}</td>
+      <td>
+        <button class="small secondary" onclick="editProduct(${p.id})">تعديل</button>
+        <button class="small danger" onclick="deleteProduct(${p.id})">حذف</button>
+      </td>
+    </tr>`)
+  );
+}
+
+function resetProductForm(){
+  var form = document.getElementById('productForm');
+  if(form) form.reset();
+  var pid = document.getElementById('pId'); if(pid) pid.value = '';
+  var unit = document.getElementById('pUnit'); if(unit) unit.value = 'قطعة';
+  var min = document.getElementById('pMin'); if(min) min.value = 3;
+  var title = document.getElementById('productFormTitle'); if(title) title.textContent = 'إضافة منتج جديد';
+}
+
+var prodFormEl = document.getElementById('productForm');
+if(prodFormEl){
+  prodFormEl.onsubmit = e => {
+    e.preventDefault();
+    let pid = Number(document.getElementById('pId').value);
+    let p = {
+      id: pid || id(),
+      name: document.getElementById('pName').value.trim(),
+      category: document.getElementById('pCategory').value,
+      unit: document.getElementById('pUnit').value.trim() || 'قطعة',
+      cost: +document.getElementById('pCost').value || 0,
+      price: +document.getElementById('pPrice').value || 0,
+      qty: +document.getElementById('pQty').value || 0,
+      min: +document.getElementById('pMin').value || 0
+    };
+    if(pid){
+      db.products = db.products.map(x => x.id === pid ? p : x);
+    } else {
+      db.products.push(p);
+    }
+    resetProductForm();
+    save();
+    alert('تم حفظ بيانات المنتج بنجاح');
+  };
+}
+
+function editProduct(pid){
+  const p = db.products.find(x => x.id === pid);
+  if(!p) return;
+  for(const [k, v] of Object.entries({
+    pId: p.id,
+    pName: p.name,
+    pCategory: p.category,
+    pUnit: p.unit,
+    pCost: p.cost,
+    pPrice: p.price,
+    pQty: p.qty,
+    pMin: p.min
+  })){
+    var el = document.getElementById(k);
+    if(el) el.value = v;
+  }
+  var title = document.getElementById('productFormTitle');
+  if(title) title.textContent = 'تعديل بيانات المنتج: ' + p.name;
+  go('products');
+  window.scrollTo(0, 0);
+}
+
+function deleteProduct(pid){
+  const p = db.products.find(x => x.id === pid);
+  if(!p) return;
+  if(!confirm(`هل تريد بالتأكيد حذف المنتج [${p.name}] من المستودع؟`)) return;
+  db.products = db.products.filter(item => item.id !== pid);
+  save();
+}
+
+// ----------------- القوائم المنسدلة -----------------
+function refreshSelects(){
+  const fill = (id, items, placeholder, showQty = false) => {
+    const el = document.getElementById(id);
+    if(!el) return;
+    const prev = el.value;
+    el.innerHTML = `<option value="">${placeholder}</option>` + items.map(x => `<option value="${x.id}">${esc(x.name)}${showQty ? ` (المتوفر: ${x.qty} ${esc(x.unit || 'قطعة')})` : ''}</option>`).join('');
+    if(items.some(x => String(x.id) === prev)) el.value = prev;
+  };
+
+  fill('saleProduct', db.products, 'اختر المنتج للبيع...', true);
+
+  const purEl = document.getElementById('purchaseProduct');
+  if(purEl){
+    const prevPur = purEl.value;
+    purEl.innerHTML = `<option value="">اختر المنتج...</option><option value="__new__" style="color:var(--main);font-weight:bold">➕ إضافة صنف جديد للمستودع...</option>` + db.products.map(x => `<option value="${x.id}">${esc(x.name)} (المتوفر: ${x.qty} ${esc(x.unit || 'قطعة')})</option>`).join('');
+    if(prevPur) purEl.value = prevPur;
+  }
+
+  fill('adjProduct', db.products, 'اختر صنفاً للجرد / التسوية...', true);
+  fill('saleCustomer', db.people.filter(p => p.type === 'customer'), 'عميل عام نقدي / اختر العميل');
+  fill('purchaseSupplier', db.people.filter(p => p.type === 'supplier'), 'اختر المورد...');
+  
+  refreshPaymentOptions();
+
+  var sPrice = document.getElementById('salePrice');
+  if(sPrice && !sPrice.dataset.changed){
+    sPrice.value = '';
+  }
+}
+
+// ----------------- المبيعات -----------------
+var saleProdEl = document.getElementById('saleProduct');
+if(saleProdEl){
+  saleProdEl.onchange = () => {
+    const p = db.products.find(x => x.id === +document.getElementById('saleProduct').value);
+    var pPriceEl = document.getElementById('salePrice');
+    if(pPriceEl) pPriceEl.value = p ? p.price : '';
+    calcSale();
+  };
+}
+
+var sQtyEl = document.getElementById('saleQty'); if(sQtyEl) sQtyEl.oninput = calcSale;
+var sPriceEl = document.getElementById('salePrice'); 
+if(sPriceEl){
+  sPriceEl.oninput = () => {
+    sPriceEl.dataset.changed = '1';
+    calcSale();
+  };
+}
+var sPaidEl = document.getElementById('salePaid'); if(sPaidEl) sPaidEl.oninput = calcSale;
+
+function calcSale(){
+  var q = +document.getElementById('saleQty').value || 0;
+  var pr = +document.getElementById('salePrice').value || 0;
+  var tot = Number((q * pr).toFixed(2));
+  var totalEl = document.getElementById('saleTotal');
+  if(totalEl) totalEl.value = money(tot);
+}
+
+var saleFormEl = document.getElementById('saleForm');
+if(saleFormEl){
+  saleFormEl.onsubmit = e => {
+    e.preventDefault();
+    const prodId = +document.getElementById('saleProduct').value;
+    const p = db.products.find(x => x.id === prodId);
+    const qty = +document.getElementById('saleQty').value;
+    const price = +document.getElementById('salePrice').value;
+    const paid = +document.getElementById('salePaid').value || 0;
+
+    if(!p) return alert('يرجى اختيار المنتج أولاً من القائمة');
+    if(qty <= 0 || price < 0) return alert('يرجى التحقق من صحة الكمية والسعر');
+    if(qty > p.qty) return alert('الكمية المتاحة في المستودع غير كافية!\nالمتوفر حالياً: ' + p.qty + ' ' + esc(p.unit || 'قطعة'));
+    
+    const total = Number((qty * price).toFixed(2));
+    if(paid > total) return alert('المبلغ المدفوع أكبر من إجمالي الفاتورة!');
+
+    const customerId = +document.getElementById('saleCustomer').value || null;
+    const custObj = db.people.find(x => x.id === customerId);
+    const customerName = custObj ? custObj.name : 'عميل عام نقدي';
+
+    if(paid < total && !custObj) {
+      if(!confirm('تنبيه: الفاتورة بها مبلغ متبقي آجل (' + money(total - paid) + ') ولكن العميل محدد كـ "عميل عام نقدي".\n\nهل تفضل المتابعة على "عميل عام نقدي"، أم الضغط على إلغاء واختيار اسم العميل لتسجيل الدين باسمه؟')) {
+        document.getElementById('saleCustomer').focus();
+        return;
+      }
+    }
+
+    const s = {
+      id: id(),
+      date: stamp(),
+      productId: p.id,
+      productName: p.name,
+      qty,
+      price,
+      cost: +p.cost || 0,
+      total,
+      paid,
+      customerId,
+      customerName,
+      notes: document.getElementById('saleNotes').value.trim(),
+      returned: false
+    };
+
+    // خصم الكمية من المستودع تلقائياً
+    p.qty = Number((p.qty - qty).toFixed(2));
+    db.sales.push(s);
+    latestInvoiceId = s.id;
+
+    document.getElementById('saleForm').reset();
+    document.getElementById('saleQty').value = 1;
+    document.getElementById('salePaid').value = 0;
+    document.getElementById('salePrice').dataset.changed = '';
+    document.getElementById('saleTotal').value = '0';
+    
+    save();
+    showInvoice(s.id);
+  };
+}
+
+function renderSales(){
+  var salesTable = document.getElementById('salesTable');
+  if(!salesTable) return;
+  salesTable.innerHTML = table(
+    ['رقم', 'التاريخ', 'العميل', 'المنتج', 'الكمية', 'الإجمالي', 'المدفوع', 'المتبقي', 'الحالة', 'إجراء'],
+    [...db.sales].reverse().map(s => `<tr>
+      <td><b>#${s.id}</b></td>
+      <td>${dateText(s.date)}</td>
+      <td>${esc(s.customerName)}</td>
+      <td>${esc(s.productName)}</td>
+      <td><b>${s.qty}</b></td>
+      <td>${money(s.total)}</td>
+      <td>${money(s.paid)}</td>
+      <td><span style="color:${(s.total - s.paid > 0) ? '#dc2626' : '#475569'};font-weight:bold">${money(Math.max(0, s.total - s.paid))}</span></td>
+      <td>${s.returned ? '<span class="badge returned">مرتجع</span>' : '<span class="badge success">مكتملة</span>'}</td>
+      <td style="display:flex;gap:4px;flex-wrap:wrap">
+        <button class="small secondary" onclick="showInvoice(${s.id})">عرض / طباعة</button>
+        ${!s.returned ? `<button class="small warning" onclick="returnSale(${s.id})" title="إرجاع البضاعة للمستودع">مرتجع</button>` : ''}
+        <button class="small danger" onclick="deleteSale(${s.id})">حذف</button>
+      </td>
+    </tr>`)
+  );
+}
+
+function showInvoice(sid){
+  const s = db.sales.find(x => x.id === sid);
+  if(!s) return;
+  latestInvoiceId = sid;
+  const retBadge = s.returned ? '<div style="background:#fee2e2;color:#991b1b;padding:8px;border-radius:6px;font-weight:bold;margin:10px 0;font-size:14px;border:1px solid #f87171">⚠️ تنبيه: هذه الفاتورة ملغاة (مرتجع مبيعات) وأُعيدت الكمية للمستودع</div>' : '';
+  const remaining = Math.max(0, Number(s.total || 0) - Number(s.paid || 0));
+
+  const invoiceHtml = `
+    <div style="max-width:580px;margin:20px auto;padding:24px;border:1px solid #cbd5e1;border-radius:12px;background:#fff;font-family:Tahoma,Arial,sans-serif;color:#1e293b;direction:rtl">
+      <div style="text-align:center;border-bottom:2px dashed #0f766e;padding-bottom:14px;margin-bottom:16px">
+        <h1 style="margin:0 0 4px;font-size:22px;color:#0f766e">⚡ ${esc(db.settings.name)}</h1>
+        <div style="font-size:13px;color:#64748b">فاتورة مبيعات مواد كهربائية</div>
+        <div style="font-size:16px;font-weight:bold;margin-top:6px;color:#0f172a">فاتورة رقم: #${s.id}</div>
+        <div style="font-size:12px;color:#64748b;margin-top:2px">التاريخ: ${dateText(s.date)}</div>
+      </div>
+      ${retBadge}
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:14px;background:#f8fafc;padding:10px;border-radius:8px">
+        <div><b>العميل:</b> ${esc(s.customerName)}</div>
+        <div><b>حالة السداد:</b> ${remaining === 0 ? '<span style="color:#16a34a;font-weight:bold">خالص بالكامل</span>' : '<span style="color:#dc2626;font-weight:bold">متبقي آجل</span>'}</div>
+      </div>
+      <table style="width:100%;border-collapse:collapse;margin-bottom:16px;font-size:13px">
+        <thead>
+          <tr style="background:#f1f5f9;border-bottom:2px solid #cbd5e1">
+            <th style="padding:8px;text-align:right">البيان / الصنف</th>
+            <th style="padding:8px;text-align:center">الكمية</th>
+            <th style="padding:8px;text-align:left">سعر الوحدة</th>
+            <th style="padding:8px;text-align:left">الإجمالي</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #e2e8f0">
+            <td style="padding:10px 8px;font-weight:bold">${esc(s.productName)}</td>
+            <td style="padding:10px 8px;text-align:center">${s.qty}</td>
+            <td style="padding:10px 8px;text-align:left">${money(s.price)}</td>
+            <td style="padding:10px 8px;text-align:left;font-weight:bold">${money(s.total)}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="background:#f8fafc;border-radius:8px;padding:12px;margin-bottom:14px;font-size:13px">
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+          <span>إجمالي الفاتورة:</span>
+          <b>${money(s.total)}</b>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-bottom:6px;color:#166534">
+          <span>المبلغ المدفوع:</span>
+          <b>${money(s.paid)}</b>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding-top:6px;border-top:1px dashed #cbd5e1;color:${remaining > 0 ? '#b91c1c' : '#475569'};font-weight:bold;font-size:14px">
+          <span>المبلغ المتبقي:</span>
+          <span>${money(remaining)}</span>
+        </div>
+      </div>
+      ${s.notes ? `<div style="font-size:12px;color:#64748b;margin-bottom:14px"><b>ملاحظات:</b> ${esc(s.notes)}</div>` : ''}
+      <div style="text-align:center;border-top:1px solid #e2e8f0;padding-top:12px;font-size:12px;color:#64748b">
+        <div>شكراً لتعاملكم معنا ونسعد بخدمتكم دائماً</div>
+        <div style="margin-top:4px;font-family:monospace;letter-spacing:2px">||| ||||| |||| || |||||||</div>
+      </div>
+    </div>
+  `;
+
+  var printContainer = document.getElementById('invoicePrint');
+  if(printContainer){
+    printContainer.innerHTML = invoiceHtml;
+  }
+  
+  document.body.classList.add('printing-invoice');
+  if(confirm('تم تجهيز فاتورة البيع رقم #' + s.id + '.\nهل تريد فتح نافذة الطباعة / الحفظ كملف PDF؟')){
+    window.print();
+  }
+}
+
+function printLatestInvoice(){
+  if(!latestInvoiceId){
+    if(!db.sales.length) return alert('لا توجد فواتير بيع مسجلة حتى الآن.');
+    latestInvoiceId = db.sales[db.sales.length - 1].id;
+  }
+  showInvoice(latestInvoiceId);
+}
+
+function printReport(){
+  document.body.classList.remove('printing-invoice');
+  window.print();
+}
+
+window.addEventListener('afterprint', function(){
+  document.body.classList.remove('printing-invoice');
+});
+
+// مرتجع المبيعات
+function returnSale(sid){
+  const s = db.sales.find(x => x.id === sid);
+  if(!s) return;
+  if(s.returned) return alert('هذه الفاتورة تم تسجيل مرتجع لها مسبقاً.');
+  if(!confirm(`هل تريد تسجيل مرتجع للفاتورة رقم #${s.id}؟\nسيتم إعادة الكمية (${s.qty}) تلقائيًا إلى المستودع وإلغاء الأثر المالي للفاتورة.`)) return;
+
+  const p = db.products.find(x => x.id === s.productId);
+  if(p){
+    p.qty = Number((Number(p.qty || 0) + Number(s.qty || 0)).toFixed(2));
+  }
+  s.returned = true;
+  s.returnDate = stamp();
+  save();
+  alert(`تم تسجيل مرتجع الفاتورة رقم #${s.id} بنجاح، وأُعيدت الكمية (${s.qty}) إلى رصيد المستودع تلقائيًا.`);
+}
+
+// حذف فاتورة مبيعات
+function deleteSale(sid){
+  const s = db.sales.find(x => x.id === sid);
+  if(!s) return;
+  const msg = s.returned 
+    ? `هل تريد حذف سجل الفاتورة المرتجعة رقم #${s.id} نهائياً؟` 
+    : `هل تريد إلغاء وحذف الفاتورة رقم #${s.id} نهائياً؟\nسيتم إعادة الكمية (${s.qty}) إلى المستودع تلقائياً قبل الحذف.`;
+  if(!confirm(msg)) return;
+  if(!s.returned){
+    const p = db.products.find(x => x.id === s.productId);
+    if(p) p.qty = Number((Number(p.qty || 0) + Number(s.qty || 0)).toFixed(2));
+  }
+  db.sales = db.sales.filter(x => x.id !== sid);
+  save();
+  alert('تم حذف الفاتورة وتحديث رصيد المستودع.');
+}
+
+// ----------------- المشتريات -----------------
+function toggleNewProductFields(show){
+  const sec = document.getElementById('newProductSection');
+  const sel = document.getElementById('purchaseProduct');
+  const btn = document.getElementById('btnToggleNewProd');
+  if(!sec) return;
+  const isHidden = sec.style.display === 'none';
+  const willShow = (typeof show === 'boolean') ? show : isHidden;
+  sec.style.display = willShow ? 'block' : 'none';
+  if(willShow){
+    if(sel) sel.value = '__new__';
+    if(btn) btn.textContent = '✖ إلغاء الصنف الجديد';
+    var npEl = document.getElementById('newPName'); if(npEl) npEl.focus();
+  } else {
+    if(sel && sel.value === '__new__') sel.value = '';
+    if(btn) btn.textContent = '➕ صنف جديد غير مسجل في المستودع';
+  }
+}
+
+function onPurchaseProductChange(){
+  const sel = document.getElementById('purchaseProduct');
+  if(!sel) return;
+  if(sel.value === '__new__'){
+    toggleNewProductFields(true);
+    var pCost = document.getElementById('purchaseCost'); if(pCost) pCost.value = '';
+  } else {
+    toggleNewProductFields(false);
+    const p = db.products.find(x => x.id === +sel.value);
+    var pCost2 = document.getElementById('purchaseCost'); if(pCost2) pCost2.value = p ? p.cost : '';
+  }
+}
+
+var purFormEl = document.getElementById('purchaseForm');
+if(purFormEl){
+  purFormEl.onsubmit = e => {
+    e.preventDefault();
+    const prodVal = document.getElementById('purchaseProduct').value;
+    const qty = +document.getElementById('purchaseQty').value;
+    const cost = +document.getElementById('purchaseCost').value;
+    const paid = +document.getElementById('purchasePaid').value || 0;
+
+    if(!prodVal) return alert('يرجى اختيار صنف أو إدخال صنف جديد للمستودع');
+    if(qty <= 0 || cost < 0) return alert('يرجى التحقق من صحة الكمية والتكلفة');
+    const total = Number((qty * cost).toFixed(2));
+    if(paid > total) return alert('المبلغ المدفوع للمورد أكبر من الإجمالي!');
+
+    let p = null;
+    if(prodVal === '__new__'){
+      const newName = (document.getElementById('newPName').value || '').trim();
+      if(!newName) return alert('يرجى إدخال اسم الصنف الجديد');
+      const newCat = document.getElementById('newPCategory').value;
+      const newUnit = (document.getElementById('newPUnit').value || '').trim() || 'قطعة';
+      const newPrice = +document.getElementById('newPPrice').value || Number((cost * 1.25).toFixed(2));
+      const newMin = +document.getElementById('newPMin').value || 3;
+
+      p = {
+        id: id(),
+        name: newName,
+        category: newCat,
+        unit: newUnit,
+        cost: cost,
+        price: newPrice,
+        qty: qty,
+        min: newMin
+      };
+      db.products.push(p);
+    } else {
+      p = db.products.find(x => x.id === +prodVal);
+      if(!p) return alert('الصنف غير موجود بالمستودع');
+      p.qty = Number((Number(p.qty || 0) + qty).toFixed(2));
+      p.cost = cost;
+    }
+
+    db.purchases.push({
+      id: id(),
+      date: stamp(),
+      productId: p.id,
+      productName: p.name,
+      qty,
+      cost,
+      total,
+      paid,
+      supplierId: +document.getElementById('purchaseSupplier').value || null,
+      supplierName: (function(){
+        var sid = +document.getElementById('purchaseSupplier').value;
+        var sp = db.people.find(function(x){ return x.id === sid; });
+        return sp ? sp.name : 'مورد عام';
+      })(),
+      notes: document.getElementById('purchaseNotes').value.trim(),
+      returned: false
+    });
+
+    document.getElementById('purchaseForm').reset();
+    toggleNewProductFields(false);
+    document.getElementById('purchaseQty').value = 1;
+    document.getElementById('purchasePaid').value = 0;
+    save();
+    alert(`تم تسجيل المشتريات بنجاح وتحديث رصيد الصنف [${p.name}] في المستودع إلى ${p.qty} ${p.unit || 'قطعة'}.`);
+  };
+}
+
+function renderPurchases(){
+  var purTable = document.getElementById('purchasesTable');
+  if(!purTable) return;
+  purTable.innerHTML = table(
+    ['رقم', 'التاريخ', 'المورد', 'المنتج', 'الكمية', 'الإجمالي', 'المدفوع', 'المتبقي', 'الحالة', 'إجراء'],
+    [...db.purchases].reverse().map(x => `<tr>
+      <td><b>#${x.id}</b></td>
+      <td>${dateText(x.date)}</td>
+      <td>${esc(x.supplierName)}</td>
+      <td>${esc(x.productName)}</td>
+      <td><b>${x.qty}</b></td>
+      <td>${money(x.total)}</td>
+      <td>${money(x.paid)}</td>
+      <td><span style="color:${(x.total - x.paid > 0) ? '#dc2626' : '#475569'};font-weight:bold">${money(Math.max(0, x.total - x.paid))}</span></td>
+      <td>${x.returned ? '<span class="badge returned">مرتجع</span>' : '<span class="badge success">مكتملة</span>'}</td>
+      <td style="display:flex;gap:4px;flex-wrap:wrap">
+        ${!x.returned ? `<button class="small warning" onclick="returnPurchase(${x.id})" title="إرجاع البضاعة للمورد وخصمها من المستودع">إرجاع للمورد</button>` : '<span class="muted">مرتجع</span>'}
+        <button class="small danger" onclick="deletePurchase(${x.id})">حذف</button>
+      </td>    </tr>`)
+  );
+}
+
+// مرتجع المشتريات
+function returnPurchase(pid){
+  const pur = db.purchases.find(x => x.id === pid);
+  if(!pur) return;
+  if(pur.returned) return alert('عملية الشراء هذه تم إرجاعها مسبقاً.');
+  const p = db.products.find(x => x.id === pur.productId);
+  if(p && Number(p.qty || 0) < Number(pur.qty || 0)){
+    if(!confirm(`تنبيه: الرصيد المتوفر حالياً بالمستودع (${p.qty}) أقل من كمية الشراء المراد إرجاعها (${pur.qty}). هل تريد المتابعة وخصم المتوفر ليصبح صفراً؟`)) return;
+    p.qty = 0;
+  } else if(p){
+    if(!confirm(`هل أنت متأكد من تسجيل إرجاع مشتريات رقم #${pur.id} للمورد؟\nسيتم خصم الكمية (${pur.qty}) من رصيد المستودع تلقائياً.`)) return;
+    p.qty = Number((Number(p.qty || 0) - Number(pur.qty || 0)).toFixed(2));
+  }
+  pur.returned = true;
+  pur.returnDate = stamp();
+  save();
+  alert(`تم تسجيل إرجاع المشتريات رقم #${pur.id} وخُصمت الكمية من المستودع تلقائياً.`);
+}
+
+// حذف سجل مشتريات
+function deletePurchase(pid){
+  const pur = db.purchases.find(x => x.id === pid);
+  if(!pur) return;
+  const msg = pur.returned
+    ? `هل تريد حذف سجل فاتورة الشراء المرتجعة رقم #${pur.id} نهائياً؟`
+    : `هل تريد حذف فاتورة الشراء رقم #${pur.id}؟\nتنبيه: سيتم خصم الكمية (${pur.qty}) من رصيد المستودع إذا كانت ما تزال متوفرة.`;
+  if(!confirm(msg)) return;
+  if(!pur.returned){
+    const p = db.products.find(x => x.id === pur.productId);
+    if(p){
+      p.qty = Math.max(0, Number((Number(p.qty || 0) - Number(pur.qty || 0)).toFixed(2)));
+    }
+  }
+  db.purchases = db.purchases.filter(x => x.id !== pid);
+  save();
+  alert('تم حذف فاتورة الشراء وتحديث المستودع.');
+}
+
+// ----------------- تسوية وجرد المستودع -----------------
+function onAdjProductChange(){
+  const pid = +document.getElementById('adjProduct').value;
+  const p = db.products.find(x => x.id === pid);
+  const curEl = document.getElementById('adjCurrentQty');
+  if(curEl) curEl.value = p ? p.qty : '';
+  calcAdjDiff();
+}
+
+function calcAdjDiff(){
+  const cur = +document.getElementById('adjCurrentQty').value || 0;
+  const actualStr = document.getElementById('adjActualQty').value;
+  const diffEl = document.getElementById('adjDiff');
+  if(!diffEl) return;
+  if(actualStr === ''){
+    diffEl.value = '';
+    return;
+  }
+  const actual = +actualStr;
+  const diff = Number((actual - cur).toFixed(2));
+  diffEl.value = (diff > 0 ? '+' : '') + diff;
+  diffEl.className = diff > 0 ? 'diff-pos' : (diff < 0 ? 'diff-neg' : 'diff-zero');
+}
+
+function renderAdjustments(){
+  const container = document.getElementById('adjustmentsTable');
+  if(!container) return;
+  const list = db.adjustments || [];
+  container.innerHTML = table(
+    ['رقم', 'التاريخ', 'الصنف', 'الرصيد الدفتري', 'الجرد الفعلي', 'الفارق', 'السبب', 'ملاحظات', 'إجراء'],
+    [...list].reverse().map(a => `<tr>
+      <td><b>#${a.id}</b></td>
+      <td>${dateText(a.date)}</td>
+      <td><b>${esc(a.productName)}</b></td>
+      <td>${a.prevQty} ${esc(a.unit || '')}</td>
+      <td>${a.actualQty} ${esc(a.unit || '')}</td>
+      <td><span class="${a.diff > 0 ? 'diff-pos' : (a.diff < 0 ? 'diff-neg' : 'diff-zero')}">${(a.diff > 0 ? '+' : '') + a.diff}</span></td>
+      <td><span class="badge ${a.diff < 0 ? 'warning' : ''}">${esc(a.reason)}</span></td>
+      <td>${esc(a.notes || '—')}</td>
+      <td><button class="small danger" onclick="deleteAdjustment(${a.id})">حذف</button></td>
+    </tr>`)
+  );
+}
+
+function deleteAdjustment(aid){
+  if(!confirm('هل تريد حذف سجل هذه التسوية من السجل؟\n(لن تتأثر كمية المستودع الحالية)')) return;
+  db.adjustments = (db.adjustments || []).filter(x => x.id !== aid);
+  save();
+}
+
+var adjForm = document.getElementById('adjustmentForm');
+if(adjForm){
+  adjForm.onsubmit = function(e){
+    e.preventDefault();
+    var pid = +document.getElementById('adjProduct').value;
+    var p = db.products.find(function(x){ return x.id === pid; });
+    if(!p) return alert('يرجى اختيار الصنف أولاً من القائمة');
+    var actual = +document.getElementById('adjActualQty').value;
+    if(isNaN(actual) || actual < 0) return alert('يرجى إدخال كمية جرد فعلية صحيحة');
+    var prev = Number(p.qty) || 0;
+    var diff = Number((actual - prev).toFixed(2));
+    var reason = document.getElementById('adjReason').value;
+    var notes = document.getElementById('adjNotes').value.trim();
+
+    if(!confirm(`اعتماد تسوية الصنف: ${p.name}\nالرصيد الدفتري السابق: ${prev}\nالجرد الفعلي الجديد: ${actual}\nالفارق: ${(diff > 0 ? '+' : '') + diff}\nالسبب: ${reason}\n\nهل تريد تحديث رصيد المستودع تلقائياً الآن؟`)) return;
+
+    p.qty = actual;
+    var record = {
+      id: id(),
+      date: stamp(),
+      productId: p.id,
+      productName: p.name,
+      unit: p.unit || 'قطعة',
+      prevQty: prev,
+      actualQty: actual,
+      diff: diff,
+      reason: reason,
+      notes: notes
+    };
+    if(!db.adjustments) db.adjustments = [];
+    db.adjustments.push(record);
+    document.getElementById('adjustmentForm').reset();
+    document.getElementById('adjCurrentQty').value = '';
+    document.getElementById('adjDiff').value = '';
+    save();
+    alert(`تم اعتماد التسوية وتحديث رصيد الصنف [${p.name}] في المستودع إلى ${actual} بنجاح.`);
+  };
+}
+
+// ----------------- العملاء والموردون -----------------
+var personFormEl = document.getElementById('personForm');
+if(personFormEl){
+  personFormEl.onsubmit = e => {
+    e.preventDefault();
+    db.people.push({
+      id: id(),
+      name: document.getElementById('personName').value.trim(),
+      type: document.getElementById('personType').value,
+      phone: document.getElementById('personPhone').value.trim(),
+      notes: document.getElementById('personNotes').value.trim()
+    });
+    var pf = document.getElementById('personForm'); if(pf) pf.reset();
+    save();
+    alert('تم حفظ البيانات بنجاح');
+  };
+}
+
+function renderPeople(){
+  var peopleTable = document.getElementById('peopleTable');
+  if(!peopleTable) return;
+  peopleTable.innerHTML = table(
+    ['الاسم', 'النوع', 'الهاتف', 'ملاحظات', 'إجراء'],
+    db.people.map(p => `<tr>
+      <td><b>${esc(p.name)}</b></td>
+      <td>${p.type === 'customer' ? '<span class="badge">عميل</span>' : '<span class="badge low">مورد</span>'}</td>
+      <td>${esc(p.phone || '—')}</td>
+      <td>${esc(p.notes || '—')}</td>
+      <td><button class="small danger" onclick="deletePerson(${p.id})">حذف</button></td>
+    </tr>`)
+  );
+}
+
+function deletePerson(pid){
+  if(pid === 1) return alert('لا يمكن حذف "عميل عام نقدي" الافتراضي');
+  if(!confirm('هل تريد حذف الاسم من القائمة؟ ستبقى الفواتير السابقة محفوظة.')) return;
+  db.people = db.people.filter(p => p.id !== pid);
+  save();
+}
+
+// ----------------- الديون والمدفوعات -----------------
+var pTypeEl = document.getElementById('paymentType');
+if(pTypeEl) pTypeEl.onchange = refreshPaymentOptions;
+
+function refreshPaymentOptions(){
+  const typeEl = document.getElementById('paymentType');
+  const type = typeEl ? typeEl.value : 'collect';
+  const el = document.getElementById('paymentPerson');
+  if(!el) return;
+  const prev = el.value;
+  const arr = db.people.filter(p => type === 'collect' ? p.type === 'customer' : p.type === 'supplier');
+  el.innerHTML = '<option value="">اختر الطرف المعني...</option>' + arr.map(p => `<option value="${p.id}">${esc(p.name)}</option>`).join('');
+  if(arr.some(p => String(p.id) === prev)) el.value = prev;
+}
+
+var payFormEl = document.getElementById('paymentForm');
+if(payFormEl){
+  payFormEl.onsubmit = e => {
+    e.preventDefault();
+    const person = db.people.find(p => p.id === +document.getElementById('paymentPerson').value);
+    const amount = +document.getElementById('paymentAmount').value;
+    const type = document.getElementById('paymentType').value;
+    if(!person) return alert('يرجى اختيار العميل أو المورد من القائمة');
+    if(amount <= 0) return alert('يرجى إدخال مبلغ صحيح أكبر من الصفر');
+    db.payments.push({
+      id: id(),
+      date: stamp(),
+      personId: person.id,
+      personName: person.name,
+      type,
+      amount,
+      notes: document.getElementById('paymentNotes').value.trim()
+    });
+    var f = document.getElementById('paymentForm'); if(f) f.reset();
+    save();
+    alert('تم تسجيل الدفعة وتحديث أرصدة الديون بنجاح.');
+  };
+}
+
+function renderPayments(){
+  const activeSales = db.sales.filter(s => !s.returned);
+  const activePurchases = db.purchases.filter(p => !p.returned);
+
+  const c = db.payments.filter(x => x.type === 'collect').reduce((a, x) => a + Number(x.amount || 0), 0);
+  const s = db.payments.filter(x => x.type === 'pay').reduce((a, x) => a + Number(x.amount || 0), 0);
+  
+  const customerDebtVal = Math.max(0, activeSales.reduce((a, x) => a + (Number(x.total || 0) - Number(x.paid || 0)), 0) - c);
+  const supplierDebtVal = Math.max(0, activePurchases.reduce((a, x) => a + (Number(x.total || 0) - Number(x.paid || 0)), 0) - s);
+
+  var cDebtEl = document.getElementById('customerDebt');
+  if(cDebtEl) cDebtEl.textContent = money(customerDebtVal);
+  var sDebtEl = document.getElementById('supplierDebt');
+  if(sDebtEl) sDebtEl.textContent = money(supplierDebtVal);
+
+  var payTable = document.getElementById('paymentsTable');
+  if(!payTable) return;
+  payTable.innerHTML = table(
+    ['رقم', 'التاريخ', 'الطرف', 'العملية', 'المبلغ', 'ملاحظات', 'إجراء'],
+    [...db.payments].reverse().map(x => `<tr>
+      <td><b>#${x.id}</b></td>
+      <td>${dateText(x.date)}</td>
+      <td>${esc(x.personName)}</td>
+      <td><span class="badge ${x.type === 'collect' ? 'success' : 'low'}">${x.type === 'collect' ? 'تحصيل من عميل' : 'سداد لمورد'}</span></td>
+      <td><b>${money(x.amount)}</b></td>
+      <td>${esc(x.notes || '—')}</td>
+      <td><button class="small danger" onclick="deletePayment(${x.id})">حذف</button></td>
+    </tr>`)
+  );
+}
+
+function deletePayment(pid){
+  if(!confirm('هل تريد بالتأكيد حذف سجل هذه الدفعة نهائياً؟')) return;
+  db.payments = db.payments.filter(x => x.id !== pid);
+  save();
+  alert('تم حذف الدفعة وتحديث أرصدة الديون.');
+}
+
+// ----------------- لوحة التحكم -----------------
+function renderDashboard(){
+  const activeSales = db.sales.filter(s => !s.returned);
+  const activePurchases = db.purchases.filter(p => !p.returned);
+  const today = new Date().toDateString();
+  const salesToday = activeSales.filter(s => new Date(s.date).toDateString() === today).reduce((a, s) => a + (Number(s.total) || 0), 0);
+  
+  var dSales = document.getElementById('dSales'); if(dSales) dSales.textContent = money(salesToday);
+  var dInv = document.getElementById('dInvoices'); if(dInv) dInv.textContent = activeSales.length;
+  var dStock = document.getElementById('dStock'); if(dStock) dStock.textContent = money(db.products.reduce((a, p) => a + (Number(p.qty) || 0) * (Number(p.cost) || 0), 0));
+  
+  const customerCollections = db.payments.filter(p => p.type === 'collect').reduce((a, p) => a + (Number(p.amount) || 0), 0);
+  const totalCustomerDebt = Math.max(0, activeSales.reduce((a, s) => a + (Number(s.total) || 0) - (Number(s.paid) || 0), 0) - customerCollections);
+  var dDebt = document.getElementById('dDebt'); if(dDebt) dDebt.textContent = money(totalCustomerDebt);
+
+  const low = db.products.filter(p => Number(p.qty) <= Number(p.min || 0));
+  var lowEl = document.getElementById('lowStock');
+  if(lowEl){
+    lowEl.innerHTML = low.length 
+      ? '<ul>' + low.map(p => `<li style="margin:8px 0">${esc(p.name)} — المتبقي <b>${p.qty}</b> ${esc(p.unit || 'قطعة')} <span class="badge low">أعد الطلب</span></li>`).join('') + '</ul>'
+      : '<div class="empty">لا توجد تنبيهات؛ جميع أصناف المخزون بمستوى كافٍ.</div>';
+  }
+
+  const recent = [...db.sales].reverse().slice(0, 5);
+  var recEl = document.getElementById('recentSales');
+  if(recEl){
+    recEl.innerHTML = recent.length 
+      ? table(['الفاتورة', 'العميل', 'الإجمالي', 'الحالة'], recent.map(s => `<tr><td>#${s.id}</td><td>${esc(s.customerName)}</td><td>${money(s.total)}</td><td>${s.returned ? '<span class="badge returned">مرتجع</span>' : '<span class="badge success">مكتملة</span>'}</td></tr>`))
+      : '<div class="empty">لا توجد مبيعات مسجلة حتى الآن.</div>';
+  }
+}
+
+// ----------------- التقارير والأرباح -----------------
+function renderReports(){
+  const activeSales = db.sales.filter(s => !s.returned);
+  const total = activeSales.reduce((a, s) => a + (Number(s.total) || 0), 0);
+  const cost = activeSales.reduce((a, s) => a + (Number(s.qty) || 0) * (Number(s.cost) || 0), 0);
+  
+  var rSales = document.getElementById('rSales'); if(rSales) rSales.textContent = money(total);
+  var rCost = document.getElementById('rCost'); if(rCost) rCost.textContent = money(cost);
+  var rProfit = document.getElementById('rProfit'); if(rProfit) rProfit.textContent = money(total - cost);
+  var rProds = document.getElementById('rProducts'); if(rProds) rProds.textContent = db.products.length;
+
+  const sums = {};
+  activeSales.forEach(s => {
+    if(!sums[s.productName]) sums[s.productName] = { qty: 0, total: 0, profit: 0 };
+    sums[s.productName].qty += Number(s.qty) || 0;
+    sums[s.productName].total += Number(s.total) || 0;
+    sums[s.productName].profit += (Number(s.total) || 0) - (Number(s.qty) || 0) * (Number(s.cost) || 0);
+  });
+
+  var repTable = document.getElementById('reportTable');
+  if(repTable){
+    repTable.innerHTML = table(
+      ['المنتج', 'الكمية المباعة', 'إجمالي البيع', 'صافي الربح المحقق'],
+      Object.entries(sums).map(([n, x]) => `<tr>
+        <td><b>${esc(n)}</b></td>
+        <td>${x.qty}</td>
+        <td>${money(x.total)}</td>
+        <td><b style="color:#16a34a">${money(x.profit)}</b></td>
+      </tr>`)
+    );
+  }
+}
+
+// ----------------- التنقل بين الأقسام -----------------
+function go(page){
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) {
+    pages[i].classList.remove('active');
+  }
+  var target = document.getElementById('page-' + page);
+  if (target) {
+    target.classList.add('active');
+  }
+  var buttons = document.querySelectorAll('.nav button, .mobile-nav button');
+  for (var j = 0; j < buttons.length; j++) {
+    if (buttons[j].getAttribute('data-page') === page) {
+      buttons[j].classList.add('active');
+    } else {
+      buttons[j].classList.remove('active');
+    }
+  }
+  var sidebar = document.getElementById('sidebar');
+  if (sidebar) sidebar.classList.remove('open');
+  if (page === 'sales' || page === 'purchases' || page === 'products' || page === 'debts') refreshSelects();
+  window.scrollTo(0, 0);
+}
+
+document.querySelectorAll('.nav button').forEach(b => {
+  b.addEventListener('click', () => go(b.dataset.page));
+});
+var mToggle = document.getElementById('menuToggle');
+if(mToggle){
+  mToggle.onclick = () => {
+    var sb = document.getElementById('sidebar');
+    if(sb) sb.classList.toggle('open');
+  };
+}
+
+// ----------------- المساعد الذكي والتحليلات -----------------
+function getAIProvider(){
+  var el = document.getElementById('aiProvider');
+  return (el && el.value) ? el.value : (safeStorage.getItem('binabadi_ai_provider') || 'gemini');
+}
+
+function setAIProvider(p){
+  var el = document.getElementById('aiProvider');
+  if(el) el.value = p;
+  safeStorage.setItem('binabadi_ai_provider', p);
+  updateAIKeyInputUI();
+  updateAIStatus();
+}
+
+function updateAIKeyInputUI(){
+  var p = getAIProvider();
+  var inp = document.getElementById('aiKey');
+  var lbl = document.getElementById('apiKeyLabel');
+  if(!inp || !lbl) return;
+  if(p === 'claude'){
+    lbl.textContent = 'مفتاح Anthropic API Key الخاص بنموذج Claude';
+    inp.placeholder = 'ألصق مفتاح Claude هنا (يبدأ بـ sk-ant-...)';
+    inp.value = safeStorage.getItem('binabadi_claude_api_key') || '';
+  } else {
+    lbl.textContent = 'مفتاح Google Gemini API Key';
+    inp.placeholder = 'ألصق مفتاح Gemini هنا (يبدأ بـ AIzaSy...)';
+    inp.value = safeStorage.getItem('binabadi_gemini_api_key') || '';
+  }
+}
+
+function openAPIKeySite(){
+  var p = getAIProvider();
+  if(p === 'claude'){
+    window.open('https://console.anthropic.com/settings/keys', '_blank');
+  } else {
+    window.open('https://aistudio.google.com/apikey', '_blank');
+  }
+}
+
+function saveAIKey(){
+  var p = getAIProvider();
+  var inp = document.getElementById('aiKey');
+  var k = inp ? inp.value.trim() : '';
+  if(!k) return alert('يرجى لصق مفتاح API أولاً');
+  if(p === 'claude'){
+    safeStorage.setItem('binabadi_claude_api_key', k);
+  } else {
+    safeStorage.setItem('binabadi_gemini_api_key', k);
+  }
+  updateAIStatus();
+  alert('تم حفظ مفتاح ' + (p === 'claude' ? 'Claude' : 'Gemini') + ' بنجاح وأمان في هذا المتصفح.');
+}
+
+function clearAIKey(){
+  var p = getAIProvider();
+  if(p === 'claude'){
+    safeStorage.removeItem('binabadi_claude_api_key');
+  } else {
+    safeStorage.removeItem('binabadi_gemini_api_key');
+  }
+  var inp = document.getElementById('aiKey');
+  if(inp) inp.value = '';
+  updateAIStatus();
+  alert('تم حذف المفتاح من هذا المتصفح.');
+}
+
+function updateAIStatus(){
+  var p = getAIProvider();
+  var key = (p === 'claude') ? safeStorage.getItem('binabadi_claude_api_key') : safeStorage.getItem('binabadi_gemini_api_key');
+  var el = document.getElementById('aiStatus');
+  if(!el) return;
+  if(key){
+    el.textContent = '✅ الذكاء الاصطناعي مفعّل عبر (' + (p === 'claude' ? 'Claude 3.5 Sonnet' : 'Google Gemini') + '). المساعد جاهز للاستشارة.';
+    el.style.color = '#0f766e';
+    el.style.fontWeight = 'bold';
+  } else {
+    el.textContent = '⚠️ الذكاء الاصطناعي السحابي غير مفعّل. أدخل مفتاح ' + (p === 'claude' ? 'Claude' : 'Gemini') + ' لتفعيل الاستشارات المتقدمة.';
+    el.style.color = 'var(--muted)';
+    el.style.fontWeight = 'normal';
+  }
+}
+
+function makeBusinessContext(){
+  const activeSales = db.sales.filter(s => !s.returned);
+  return JSON.stringify({
+    اسم_المحل: db.settings.name,
+    العملة: db.settings.currency,
+    المبيعات_الحديثة: activeSales.slice(-10).map(function(s){ return { المنتج: s.productName, الكمية: s.qty, الإجمالي: s.total, العميل: s.customerName }; }),
+    النواقص_في_المخزون: db.products.filter(function(p){ return Number(p.qty) <= Number(p.min); }).map(function(p){ return { الصنف: p.name, الكمية: p.qty, حد_الطلب: p.min }; }),
+    الديون: {
+      ديون_العملاء: document.getElementById('customerDebt') ? document.getElementById('customerDebt').textContent : '0',
+      مستحقات_الموردين: document.getElementById('supplierDebt') ? document.getElementById('supplierDebt').textContent : '0'
+    }
+  });
+}
+
+async function askAssistant(){
+  var inp = document.getElementById('assistantInput');
+  var question = inp ? inp.value.trim() : '';
+  if(!question) return alert('يرجى كتابة سؤالك أولاً.');
+  var p = getAIProvider();
+  var key = (p === 'claude') ? safeStorage.getItem('binabadi_claude_api_key') : safeStorage.getItem('binabadi_gemini_api_key');
+  var el = document.getElementById('assistantAnswer');
+  var btn = document.getElementById('askAIButton');
+  if(el) el.classList.remove('hide');
+  if(!key){
+    if(el) el.textContent = 'يرجى إدخال وحفظ مفتاح ' + (p === 'claude' ? 'Claude' : 'Gemini') + ' في الأعلى.';
+    return;
+  }
+  if(btn){
+    btn.disabled = true;
+    btn.textContent = 'جارٍ التحليل عبر ' + (p === 'claude' ? 'Claude 3.5' : 'Gemini') + '...';
+  }
+  if(el) el.textContent = 'جارٍ معالجة البيانات وصياغة المشورة المخصصة...';
+
+  try {
+    var context = makeBusinessContext();
+    var systemPrompt = 'أنت مستشار تجاري خبير لمحل ' + db.settings.name + ' لبيع المواد الكهربائية. أجب بلغة عربية مهنية ومباشرة وقدم توصيات عملية دقيقة بناءً على بيانات المتجر والمخزون.';
+    var userPrompt = 'بيانات المحل الحالية:\n' + context + '\n\nسؤال التاجر: ' + question;
+
+    var answer = '';
+    if(p === 'claude'){
+      var res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': key,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-access': 'true'
+        },
+        body: JSON.stringify({
+          model: 'claude-3-5-sonnet-20241022',
+          max_tokens: 1500,
+          system: systemPrompt,
+          messages: [{ role: 'user', content: userPrompt }]
+        })
+      });
+      var data = await res.json();
+      if(!res.ok) throw new Error(data && data.error ? data.error.message : ('خطأ ' + res.status));
+      answer = (data.content && data.content[0]) ? data.content[0].text : '';
+    } else {
+      var res2 = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + encodeURIComponent(key), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: systemPrompt + '\n\n' + userPrompt }] }],
+          generationConfig: { temperature: 0.4, maxOutputTokens: 1200 }
+        })
+      });
+      var data2 = await res2.json();
+      if(!res2.ok) throw new Error(data2 && data2.error ? data2.error.message : ('خطأ ' + res2.status));
+      answer = (data2.candidates && data2.candidates[0] && data2.candidates[0].content && data2.candidates[0].content.parts) ? data2.candidates[0].content.parts.map(function(x){ return x.text || ''; }).join('\n') : '';
+    }
+
+    if(!answer) throw new Error('لم تصل استجابة من خدمة الذكاء الاصطناعي.');
+    if(el) el.innerHTML = '<div style="white-space:pre-wrap;line-height:1.8">' + esc(answer) + '</div>';
+  } catch(err) {
+    if(el) el.textContent = 'تعذر الاتصال بالذكاء الاصطناعي: ' + err.message;
+  } finally {
+    if(btn){
+      btn.disabled = false;
+      btn.textContent = 'اسأل المساعد الذكي';
+    }
+  }
+}
+
+function runLocalAI(kind){
+  var out = document.getElementById('localAIAnswer');
+  if(!out) return;
+  var cur = db.settings.currency || 'ر.ي';
+  var fmt = function(n){ return (Number(n) || 0).toLocaleString('ar-YE', { maximumFractionDigits: 2 }) + ' ' + cur; };
+  
+  var activeSales = db.sales.filter(function(s){ return !s.returned; });
+  var activePurchases = db.purchases.filter(function(p){ return !p.returned; });
+  
+  var low = db.products.filter(function(p){ return Number(p.qty) <= Number(p.min || 0); });
+  var salesTotal = activeSales.reduce(function(a, s){ return a + (Number(s.total) || 0); }, 0);
+  var costTotal = activeSales.reduce(function(a, s){ return a + (Number(s.qty) || 0) * (Number(s.cost) || 0); }, 0);
+  var profit = salesTotal - costTotal;
+  var stockValue = db.products.reduce(function(a, p){ return a + (Number(p.qty) || 0) * (Number(p.cost) || 0); }, 0);
+  
+  var customerCollections = db.payments.filter(function(p){ return p.type === 'collect'; }).reduce(function(a, p){ return a + (Number(p.amount) || 0); }, 0);
+  var supplierPayments = db.payments.filter(function(p){ return p.type === 'pay'; }).reduce(function(a, p){ return a + (Number(p.amount) || 0); }, 0);
+  
+  var customerDue = Math.max(0, activeSales.reduce(function(a, s){ return a + (Number(s.total) || 0) - (Number(s.paid) || 0); }, 0) - customerCollections);
+  var supplierDue = Math.max(0, activePurchases.reduce(function(a, p){ return a + (Number(p.total) || 0) - (Number(p.paid) || 0); }, 0) - supplierPayments);
+  
+  var lines = [];
+  if(kind === 'stock'){
+    lines.push('📦 اقتراحات إعادة الطلب والنواقص:');
+    if(!db.products.length) {
+      lines.push('• أضف الأصناف وكمياتها أولًا للحصول على توصيات.');
+    } else if(!low.length) {
+      lines.push('• حالة المخزون ممتازة! لا توجد أصناف وصلت إلى حد التنبيه حالياً.');
+    } else {
+      low.sort(function(a, b){ return (Number(a.qty) - Number(a.min)) - (Number(b.qty) - Number(b.min)); });
+      low.forEach(function(p){
+        lines.push('• ' + p.name + ': المتبقي ' + p.qty + ' ' + (p.unit || 'قطعة') + ' (حد التنبيه: ' + p.min + '). يوصى بإعادة الشراء عاجلاً.');
+      });
+    }
+    lines.push('• إجمالي قيمة المخزون الحالي بسعر التكلفة: ' + fmt(stockValue) + '.');
+  } else if(kind === 'profit'){
+    lines.push('📈 تحليل الأرباح والمبيعات:');
+    lines.push('• إجمالي المبيعات النشطة: ' + fmt(salesTotal));
+    lines.push('• تكلفة البضاعة المباعة: ' + fmt(costTotal));
+    lines.push('• صافي الربح التجاري التقديري: ' + fmt(profit));
+    lines.push('• عدد الفواتير الناجحة: ' + activeSales.length + ' فاتورة.');
+    if(!activeSales.length) lines.push('• سجّل فواتير بيع للحصول على تحليل مالي دقيق.');
+    else lines.push('• يمكنك مراجعة الأصناف الأكثر تحقيقاً للأرباح في صفحة التقارير.');
+  } else if(kind === 'pricing'){
+    lines.push('💡 مراجعة هوامش الأسعار:');
+    var items = db.products.filter(function(p){ return Number(p.price) < Number(p.cost); });
+    var zero = db.products.filter(function(p){ return Number(p.price) === Number(p.cost); });
+    if(!db.products.length) {
+      lines.push('• أضف المنتجات وأسعار الشراء والبيع أولاً.');
+    }
+    if(items.length){
+      lines.push('⚠️ أصناف يُباع سعرها بأقل من سعر التكلفة (خسارة مباشرة):');
+      items.forEach(function(p){
+        lines.push('• ' + p.name + ' — الشراء ' + fmt(p.cost) + '، البيع ' + fmt(p.price) + '، خسارة ' + fmt(p.cost - p.price) + ' للوحدة.');
+      });
+    }
+    if(zero.length){
+      lines.push('ℹ️ أصناف سعر بيعها مساوٍ لسعر الشراء تماماً (بدون ربح):');
+      zero.forEach(function(p){
+        lines.push('• ' + p.name + ' — هامش الربح صفر.');
+      });
+    }
+    if(!items.length && !zero.length && db.products.length) {
+      lines.push('✅ جميع الأصناف المسجلة أسعار بيعها أعلى من سعر الشراء وتحقق هامش ربح سليم.');
+    }
+  } else if(kind === 'debts'){
+    lines.push('💳 تحليل الديون والتحصيل:');
+    lines.push('• ديون ومستحقات على العملاء: ' + fmt(customerDue));
+    lines.push('• مستحقات واجبة السداد للموردين: ' + fmt(supplierDue));
+    if(customerDue > 0) lines.push('• يوصى بمتابعة تحصيل فواتير البيع الآجلة لتعزيز السيولة النقدية للمحل.');
+    if(supplierDue > 0) lines.push('• جدولة سداد الموردين لتجنب تأخير توريد المواد الكهربائية.');
+    if(customerDue === 0 && supplierDue === 0) lines.push('• وضع الحسابات نظيف ولا توجد ديون معلقة مسجلة.');
+  } else {
+    lines.push('📑 ملخص شامل لحالة المتجر:');
+    lines.push('• إجمالي الأصناف في المستودع: ' + db.products.length + ' صنف');
+    lines.push('• الأصناف المنخفضة المخزون: ' + low.length);
+    lines.push('• إجمالي المبيعات المحققة: ' + fmt(salesTotal));
+    lines.push('• إجمالي الأرباح المحققة: ' + fmt(profit));
+    lines.push('• رصيد ديون العملاء: ' + fmt(customerDue));
+    lines.push('• رصيد مستحقات الموردين: ' + fmt(supplierDue));
+    lines.push('• إجمالي قيمة البضاعة بالمستودع: ' + fmt(stockValue));
+  }
+  out.textContent = lines.join('\n');
+  out.classList.remove('hide');
+}
+
+function assistantExamples(){
+  var inp = document.getElementById('assistantInput');
+  if(inp) inp.value = 'حلل الأصناف التي أوشكت على النفاد في المستودع وقدم خطة عاجلة لإعادة طلب المواد الكهربائية الأكثر طلباً.';
+  askAssistant();
+}
+
+// ----------------- النسخ الاحتياطي والإعدادات -----------------
+function exportBackup(){
+  var blob = new Blob([JSON.stringify(db, null, 2)], { type: 'application/json' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'نسخة-بن-عبادي-' + new Date().toISOString().slice(0, 10) + '.json';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+var restEl = document.getElementById('restoreFile');
+if(restEl){
+  restEl.onchange = async function(e){
+    var f = e.target.files[0];
+    if(!f) return;
+    try {
+      var x = JSON.parse(await f.text());
+      if(!x.products || !x.sales || !x.people) throw new Error('ملف غير صالح');
+      if(!confirm('ستُستبدل البيانات الحالية بالنسخة المختارة. هل تريد المتابعة؟')) return;
+      db = Object.assign({}, emptyDB(), x, { settings: Object.assign({}, emptyDB().settings, x.settings || {}) });
+      save();
+      alert('تمت استعادة النسخة الاحتياطية بنجاح.');
+    } catch(err) {
+      alert('تعذر قراءة الملف. يرجى اختيار ملف نسخة احتياطية صالح بصيغة JSON.');
+    }
+    e.target.value = '';
+  };
+}
+
+var setForm = document.getElementById('settingsForm');
+if(setForm){
+  setForm.onsubmit = function(e){
+    e.preventDefault();
+    db.settings.name = document.getElementById('settingName').value.trim() || 'بن عبادي لبيع المواد الكهربائية';
+    db.settings.currency = document.getElementById('settingCurrency').value;
+    save();
+    alert('تم حفظ الإعدادات بنجاح');
+  };
+}
+
+function clearAllData(){
+  if(!confirm('تحذير شديد: سيتم حذف كافة المنتجات والفواتير والعملاء والمشتريات والدفعات نهائيًا من هذا المتصفح.\nهل أنت متأكد؟')) return;
+  db = emptyDB();
+  save();
+  alert('تمت إعادة ضبط البرنامج ومسح البيانات.');
+}
+
+// ----------------- ميزات التثبيت كبرنامج (PWA) -----------------
+var deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', function(e){
+  e.preventDefault();
+  deferredPrompt = e;
+  var btn = document.getElementById('pwaInstallBtn');
+  if(btn){
+    btn.classList.add('highlight-install');
+  }
+});
+
+function installPWA(){
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(function(choiceResult){
+      if(choiceResult.outcome === 'accepted'){
+        var btn = document.getElementById('pwaInstallBtn');
+        if(btn) btn.style.display = 'none';
+      }
+      deferredPrompt = null;
+    });
+  } else {
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if(isIOS){
+      alert('لتثبيت التطبيق على آيفون:\n1. اضغط على زر المشاركة (Share) في المتصفح.\n2. اختر "إضافة إلى الشاشة الرئيسية" (Add to Home Screen).');
+    } else {
+      alert('لتثبيت التطبيق على هواتف أندرويد:\n1. افتح قائمة Chrome (أيقونة الثلاث نقاط ⋮ في زاوية المتصفح).\n2. اضغط على "تثبيت التطبيق" (Install App) أو "إضافة إلى الشاشة الرئيسية" (Add to Home screen).\nسيعمل التطبيق كبرنامج مستقل وسريع بدون الحاجة لفتح المتصفح.');
+    }
+  }
+}
+
+if('serviceWorker' in navigator){
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('sw.js').then(function(reg){
+      console.log('PWA ServiceWorker registered successfully:', reg.scope);
+    }).catch(function(err){
+      console.warn('PWA ServiceWorker registration failed:', err);
+    });
+  });
+}
+
+// ----------------- التشغيل الأولي الموثوق -----------------
+document.addEventListener('DOMContentLoaded', function(){
+  renderAll();
+  var providerEl = document.getElementById('aiProvider');
+  if(providerEl){
+    providerEl.onchange = function(e){ setAIProvider(e.target.value); };
+  }
+  var savedProvider = safeStorage.getItem('binabadi_ai_provider') || 'gemini';
+  setAIProvider(savedProvider);
+});
+</script>
+</body>
+</html>
