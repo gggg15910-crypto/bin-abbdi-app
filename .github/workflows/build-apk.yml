@@ -19,12 +19,11 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-      - name: Configure Android SDK
-        uses: android-actions/setup-android@v3
       - name: Install Android SDK packages
         run: |
-          yes | sdkmanager --licenses || true
-          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
@@ -43,9 +42,8 @@ jobs:
           tag_name: latest-apk
           name: بن عبادي للمواد الكهربائية - أحدث APK
           body: |
-            تنزيل مباشر لنسخة APK للاختبار.
-            الحد الأدنى لأندرويد: 6.0 (API 23).
-            إذا كانت هناك نسخة قديمة مثبتة بتوقيع مختلف، أزلها بعد حفظ نسخة احتياطية من بياناتك ثم ثبّت هذه النسخة.
+            تنزيل APK لبرنامج بن عبادي للمواد الكهربائية.
+            الحد الأدنى لأندرويد 6.0.
           files: app/build/outputs/apk/debug/app-debug.apk
           make_latest: true
           fail_on_unmatched_files: true
