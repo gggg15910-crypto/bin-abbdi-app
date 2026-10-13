@@ -1486,7 +1486,7 @@ async function askAssistant(){
       if(!res.ok) throw new Error(data && data.error ? data.error.message : ('خطأ ' + res.status));
       answer = (data.content && data.content[0]) ? data.content[0].text : '';
     } else {
-      var res2 = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' + encodeURIComponent(key), {
+      var res2 = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=' + encodeURIComponent(key), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
